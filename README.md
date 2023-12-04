@@ -43,8 +43,10 @@
     git branch
 Then git will display a list of all the branches in your repository. The currently checked-out branch will be highlighted with an asterisk (*). 
 For example, if you see output like this:
+    
     main
     *feature-branch
+    
 It means that you are currently on the "feature-branch" because it has the asterisk next to it.
 ### Only want to see the current branch. 
     git rev-parse --abbrev-ref HEAD
@@ -56,9 +58,11 @@ It means that you are currently on the "feature-branch" because it has the aster
     git branch -m <old branch name> <new branch name>
 ### Delete a branch.
 At first switch to other branch(not delete branch) then delete the branch you want to delete.
+    
     git branch -d <branch-name>
 ### Delete the .git Directory: 
 If you want to remove Git version control from a project, you essentially need to delete the hidden .git directory in the root of your project. This will remove all Git-related history, configuration, and tracking from the project.
+    
     rm -rf .git
 
 # Ubuntu installation 
