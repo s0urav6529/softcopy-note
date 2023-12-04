@@ -1,4 +1,4 @@
-# Git seetting
+# Git Setting
 
 ### Check git installed or not
     git --version
@@ -46,7 +46,7 @@ For example, if you see output like this:
     
     main
     *feature-branch
-    
+
 It means that you are currently on the "feature-branch" because it has the asterisk next to it.
 ### Only want to see the current branch. 
     git rev-parse --abbrev-ref HEAD
