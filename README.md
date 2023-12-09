@@ -234,6 +234,7 @@ Status check cmd:
 ### http-errors
 
 For create error it provides a function called createError(“type the error”);
+
 Some error code
 
     • 400    BadRequest
@@ -266,6 +267,7 @@ It's designed to simplify error handling when dealing with asynchronous routes a
 A "body parser" is a middleware used to parse the body of incoming HTTP requests,this body can include data of the requested method.This data could be in various formats such as JSON, URL-encoded data, or even multipart form data (for file uploads).The purpose of a body parser middleware is to take the raw data from the request and convert it into a more usable format that can be accessed in your route handlers or middleware functions.
 
 Install cmd : npm install body-parser
+
 Import as : const asyncHandler = require(“body-parser”);
 
 Use in main server.js or app.js
