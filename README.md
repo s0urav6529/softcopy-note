@@ -134,10 +134,24 @@ npm install dotenv[for environment setup] express nodemon body-parser[for parsin
 ### install(if not) prettier from extensions
 
 create [.vscode] folder→create [settings.json]file and paste below code
-{
-"editor.formatOnSave": true,
-"[javascript]": {
-"editor.formatOnSave": true,
-"editor.defaultFormatter": "esbenp.prettier-vscode"
-}
-}
+
+    {
+        "editor.formatOnSave": true,
+        "[javascript]": {
+            "editor.formatOnSave": true,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+    }
+
+### For run project
+
+    npm start
+
+### Create .env file paste this code (To access this file data use process.env.PORT/APP...etc)
+
+    PORT=5000
+    APP_NAME=
+    MONGO_CONNECTION_STRING=mongodb://localhost/<databasename>
+    MONGOURI=mongodb+srv://Foodline:<password>@cluster0.szpnieh.mongodb.net/<databasename>?retryWrites=true&w=majority [for mongo atlas]
+
+//replace <database> with your database name
