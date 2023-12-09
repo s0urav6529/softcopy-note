@@ -153,5 +153,20 @@ create [.vscode] folder→create [settings.json]file and paste below code
     APP_NAME=
     MONGO_CONNECTION_STRING=mongodb://localhost/<databasename>
     MONGOURI=mongodb+srv://Foodline:<password>@cluster0.szpnieh.mongodb.net/<databasename>?retryWrites=true&w=majority [for mongo atlas]
+    COOKIE_SECRET=from the below (Cookie secret link)
+    JWT_ACCESS_TOKEN_SECRET=from the below (jwt link)
+    JWT_EXPIRY=86400000  // as your choice in milisecond
 
-//replace <database> with your database name
+Replace <database> with your database name
+
+### COOKIE SECRET Link
+
+    https://api.wordpress.org/secret-key/1.1/salt/
+
+take one key & go below link to genarate hash key
+
+    https://emn178.github.io/online-tools/sha1.html
+
+### JWT ACCESS TOKEN SECRET link
+
+    https://www.javainuse.com/jwtgenerator
