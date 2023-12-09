@@ -116,7 +116,25 @@ If you want to remove Git version control from a project, you essentially need t
 
 ### Installation external module
 
-npm install dotenv[for environment setup] express nodemon body-parser[for parsing object,json & other unreadable file] http-errors[for error-handling] cookie-parser[for cookie] jsonwebtoken[for creating json] express-async-handler[for error handling] mongoose[for database] bcrypt[for hashing] moment[] ejs[for ejs template] express-validator[for validating result] multer[for file upload] socket.io[for real time communication] express-session[for create login session] nodemailer[for sending mail in case of forget password] randomstring[use as a token in case of forget password etc]
+    npm install dotenv [for environment setup]
+    express
+    nodemon
+    body-parser [for parsing object,json & other unreadable file]
+    http-errors [for error-handling]
+    cookie-parser [for cookie]
+    jsonwebtoken [for creating json]
+    express-async-handler [for error handling]
+    mongoose [for database]
+    bcrypt [for hashing]
+    moment [Moment module is used for parsing, validating, manipulating, and displaying dates and times in JavaScript]
+    ejs [for ejs template]
+    express-validator [for validating result]
+    multer [for file upload]
+    socket.io [for real time communication]
+    express-session [for create login session]
+    nodemailer [for sending mail in case of forget password]
+    randomstring [use as a token in case of forget password etc]
+    socket.io [for install web socket]
 
 ### Go to pakage.json and change this script part
 
@@ -156,6 +174,8 @@ create [.vscode] folder→create [settings.json]file and paste below code
     COOKIE_SECRET=from the below (Cookie secret link)
     JWT_ACCESS_TOKEN_SECRET=from the below (jwt link)
     JWT_EXPIRY=86400000  // as your choice in milisecond
+    COOKIE_NAME= anything
+    APP_URL=http://localhost:portno
 
 Replace <database> with your database name
 
@@ -170,3 +190,97 @@ take one key & go below link to genarate hash key
 ### JWT ACCESS TOKEN SECRET link
 
     https://www.javainuse.com/jwtgenerator
+
+### Import different-types of external module in app.js/index.js (entry file)
+
+    const express = require("express");
+    const dotenv = require("dotenv").config();
+    const http = require("http");
+    const asyncHandler = require(“express-async-handler”);     [use in desired  file]
+
+    const app = express();
+
+    const server = http.createServer(app);
+    server.listen(process.env.PORT, () => {
+    console.log(`Listening to port ${process.env.PORT}`);
+    });
+
+### For Rest API install Thunder Client or Post Man from (extensions vs-code) or postman in outside
+
+    For GET, POST, PUT, DELETE send request
+
+### ALL types of CDN link
+
+    https://cdnjs.com/libraries
+
+Use this cdn in every header file of ejs.
+
+    Example → <script src="cdn link"></script>
+
+### When we use app.use()
+
+    For use any middleware(error handler, router), body-parser,
+
+### Mongo server:
+
+Starts cmd:
+
+    sudo systemctl start mongod
+
+Status check cmd:
+
+    systemctl status mongod
+
+### http-errors
+
+For create error it provides a function called createError(“type the error”);
+Some error code
+
+    • 400    BadRequest
+    • 401    Unauthorized
+    • 402    PaymentRequired
+    • 403    Forbidden
+    • 404    NotFound
+    • 500    InternalServerError
+    • 502    BadGateway
+    • 504    GatewayTimeout
+
+### express-async-handler
+
+It's designed to simplify error handling when dealing with asynchronous routes and middleware functions. It helps to mitigate this by catching any asynchronous errors that might occur within route handlers and forwarding them to the Express error-handling middleware.
+
+    const express = require('express');
+    const app = express();
+    app.get('/some-route', asyncHandler(async (req, res) => {
+    const result = await someAsyncOperation();
+    res.json(result);	 // Sending a response
+    }));
+    // Express error-handling middleware
+    app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+    });
+
+### body-parser
+
+A "body parser" is a middleware used to parse the body of incoming HTTP requests,this body can include data of the requested method.This data could be in various formats such as JSON, URL-encoded data, or even multipart form data (for file uploads).The purpose of a body parser middleware is to take the raw data from the request and convert it into a more usable format that can be accessed in your route handlers or middleware functions.
+
+Install cmd : npm install body-parser
+Import as : const asyncHandler = require(“body-parser”);
+
+Use in main server.js or app.js
+
+    app.use(bodyParser.urlencoded({ extended: true })) ; parse application/x-www-form-urlencoded
+    app.use(bodyParser.json()) ; parse application/json
+
+### bcrypt
+
+It return a promise thus we need to use await. Bcrypt.hash() is hashed any password for protection & also compare the given password with hashed password during the login authentication or any occasion.
+
+Password hashing
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+Compare password of the user
+
+    if (await bcrypt.compare(password, user.password)) {/...}
