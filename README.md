@@ -44,7 +44,6 @@
 
     git add .
 
-
 ### Check status of your working directory, showing changes that are staged or unstaged.
 
     git status
@@ -60,7 +59,6 @@
 ### Create a new branch & switch to the branch.
 
     git checkout -b <branch name>
-
 
 ### To check the current branch you are on in a Git repository using the command line.
 
@@ -115,3 +113,31 @@ If you want to remove Git version control from a project, you essentially need t
 ### Go to vs-code terminal and initialize the project
 
     npm init →then give the info as instruction
+
+### Installation external module
+
+npm install dotenv[for environment setup] express nodemon body-parser[for parsing object,json & other unreadable file] http-errors[for error-handling] cookie-parser[for cookie] jsonwebtoken[for creating json] express-async-handler[for error handling] mongoose[for database] bcrypt[for hashing] moment[] ejs[for ejs template] express-validator[for validating result] multer[for file upload] socket.io[for real time communication] express-session[for create login session] nodemailer[for sending mail in case of forget password] randomstring[use as a token in case of forget password etc]
+
+### Go to pakage.json and change this script part
+
+    "scripts": {
+        "start": "NODE_ENV=development nodemon app.js" or
+        "start": "nodemon app.js",
+        "prod": "NODE_ENV=production node app.js",
+        "test": "mocha test/integration/fileRoutes.test.js",
+    },
+
+### For uninstall a package
+
+    npm uninstall package-name
+
+### install(if not) prettier from extensions
+
+create [.vscode] folder→create [settings.json]file and paste below code
+{
+"editor.formatOnSave": true,
+"[javascript]": {
+"editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+}
