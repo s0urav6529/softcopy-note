@@ -287,10 +287,67 @@ Compare password of the user
 
     if (await bcrypt.compare(password, user.password)) {/...}
 
-### RegExp
+### RegExp for search
 
 For searchBox we use RegExp so that search can be dynamic.
 
 #### search Route
 
         productRoute.route("/searchProduct/:item").get(searchProduct);
+
+Make a special charecter escape function in utilities folder and named as escape.
+utilities/escape.js
+
+    // function for regular expression
+    const escape = function(str){
+        return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+    };
+
+    //exports
+    module.exports = escape;
+
+#### Create a controller for this search
+
+        const escape = require("../utilities/escape")
+
+        const searchProduct = async(req, res)=>{
+
+            try {
+
+                //fetch the query string
+                const searchQuery = req.params.item;
+
+                const category = new RegExp(escape(searchQuery),"i");
+                const subCategory = new RegExp(escape(searchQuery),"i");
+                const productName = new RegExp(escape(searchQuery),"i");
+                const price = new RegExp("^" + escape(searchQuery),"i");
+                const description = new RegExp(escape(searchQuery),"i");
+
+                //now search this expession from the database
+                if(searchQuery !== ""){
+
+                    const productData = await productModel.find({
+                        $or:[{
+                            category:category
+                        },{
+                            subCategory:subCategory
+                        },{
+                            productName:productName
+                        },{
+                            price:price
+                        },{
+                            description:description
+                        }]
+                    });
+
+                    if(productData.length > 0){
+                        res.status(200).json({message:"Product found",productData});
+                    }
+                    else{
+                        res.status(200).json({message:"No product found!"});
+                    }
+                }
+            } catch (error) {
+                res.status(400).json({error,message:"Errors occurs during search product"});
+            }
+        }
