@@ -295,7 +295,12 @@ For searchBox we use RegExp so that search can be dynamic.
 
         productRoute.route("/searchProduct/:item").get(searchProduct);
 
+        //url
+
+        http://localhost:8000/product/searchProduct/<item>
+
 Make a special charecter escape function in utilities folder and named as escape.
+
 utilities/escape.js
 
     // function for regular expression
