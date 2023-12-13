@@ -286,3 +286,11 @@ Password hashing
 Compare password of the user
 
     if (await bcrypt.compare(password, user.password)) {/...}
+
+### RegExp
+
+For searchBox we use RegExp so that search can be dynamic.
+
+#### search Route
+
+        productRoute.route("/searchProduct/:item").get(searchProduct);
