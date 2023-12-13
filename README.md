@@ -295,9 +295,7 @@ For searchBox we use RegExp so that search can be dynamic.
 
         productRoute.route("/searchProduct/:item").get(searchProduct);
 
-        //url
-
-        http://localhost:8000/product/searchProduct/<item>
+        //url -> http://localhost:8000/product/searchProduct/<item>
 
 Make a special charecter escape function in utilities folder and named as escape.
 
@@ -356,3 +354,7 @@ utilities/escape.js
                 res.status(400).json({error,message:"Errors occurs during search product"});
             }
         }
+
+^: Asserts the start of the string.
+$: Asserts the end of the string.
+"i": Specifies a case-insensitive match.
