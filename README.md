@@ -366,3 +366,7 @@ $: Asserts the end of the string.
 At first need to intall nodemailer then go to this below link
 
     https://ethereal.email/
+
+Then go to Create Ethernal Account option.
+
+copy the nodemailer configuration. Set the user & pass to the env file of you project
