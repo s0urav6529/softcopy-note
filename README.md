@@ -408,3 +408,9 @@ Copy the nodemailer configuration. Set the user & pass to the .env file of you p
             console.log(error.message);
         }
     }
+
+Here,
+
+    <http://localhost:8000/admin/resetPassword>
+
+custom as your need. Then you will get the token from this link for further use.
