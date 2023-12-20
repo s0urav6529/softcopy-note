@@ -369,4 +369,42 @@ At first need to intall nodemailer then go to this below link
 
 Then go to Create Ethernal Account option.
 
-copy the nodemailer configuration. Set the user & pass to the env file of you project
+Copy the nodemailer configuration. Set the user & pass to the .env file of you project.
+
+    const sendResetPasswordMail = async(name,mail,token)=>{
+
+        try {
+
+            //create a SMTP transporter object
+
+            const transporter = nodemailer.createTransport({
+                host: 'smtp.ethereal.email',
+                port: 587,
+                auth: {
+                    user: process.env.NODE_EMAIL,
+                    pass: process.env.NODE_EMAIL_PASS,
+                }
+            });
+
+            const mailOptions = {
+                from: process.env.NODE_EMAIL,
+                to:mail,
+                subject: "Reset Password",
+                html : "<p>Hi " +
+                    name +
+                    ', Please click here to <a href = "http://localhost:8000/admin/resetPassword?token=' +
+                    token +
+                    '"> reset</a> your password.</p>',
+            };
+
+            transporter.sendMail(mailOptions,(error,info) =>{
+                if(error){
+                    console.log(error);
+                }else{
+                    console.log("Email has been sent:- ",info.response);
+                }
+            });
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
