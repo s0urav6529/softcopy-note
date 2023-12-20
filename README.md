@@ -362,3 +362,7 @@ $: Asserts the end of the string.
 "i": Specifies a case-insensitive match.
 
 ### nodemailer
+
+At first need to intall nodemailer then go to this below link
+
+    https://ethereal.email/
