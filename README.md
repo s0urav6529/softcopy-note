@@ -424,13 +424,24 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
     const updateDocument = async (id) => {
         try {
             const updatedResult = await User.findByIdAndUpdate(
-            { _id: id },
-            {
-                profession: "Backend Developer",
-            },
+                { _id: id },
+                {
+                    profession: "Backend Developer",
+                },
+                {
+                    new : true
+                }
             );
             console.log(updatedResult);
         } catch (error) {
             console.log(error);
         }
     };
+
+### findOneAndUpdate() Function
+
+    const subCategoryData = await subCategoryModel.findOneAndUpdate(
+        { categoryId : req.params.id },
+        { category : categoryData.category},
+        { new:true}
+    );
