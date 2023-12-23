@@ -445,3 +445,11 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
         { category : categoryData.category},
         { new:true}
     );
+
+### updateMany() Function
+
+    await subCategoryModel.updateMany(
+        { categoryId : req.params.id },
+        { category : categoryData.category},
+        { new:true}
+    );
