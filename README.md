@@ -414,3 +414,23 @@ Here,
     <http://localhost:8000/admin/resetPassword>
 
 custom as your need. Then you will get the token from this link for further use.
+
+### mongoose
+
+##findByIdAndUpdate() Function
+
+The findByIdAndUpdate() function is used to find a matching document, updates it according to the update arg, passing any options, and returns the found document (if any) to the callback.
+
+    const updateDocument = async (id) => {
+        try {
+            const updatedResult = await User.findByIdAndUpdate(
+            { _id: id },
+            {
+                profession: "Backend Developer",
+            },
+            );
+            console.log(updatedResult);
+        } catch (error) {
+            console.log(error);
+        }
+    };
