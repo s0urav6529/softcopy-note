@@ -417,6 +417,17 @@ custom as your need. Then you will get the token from this link for further use.
 
 ## mongoose
 
+### Create a virtual 'id' instead of '\_id'
+
+Suppose we have a Schema name 'userSchema'.
+
+    userSchema.virtual('id').get(function(){
+        return this._id.toHexString();
+    });
+    userSchema.set('toJSON',{
+        virtuals:true,
+    });
+
 ### findByIdAndUpdate() Function
 
 The findByIdAndUpdate() function is used to find a matching document, updates it according to the update arg, passing any options, and returns the found document (if any) to the callback.
