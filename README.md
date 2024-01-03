@@ -464,3 +464,16 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
         { category : categoryData.category},
         { new:true}
     );
+
+### For delete any object from the array. You should use the 'update' method with the '$pull' operator to remove the specific element from the array.
+
+    const result = await Order.updateOne(
+        { 'orderDetails.orderId': orderId },
+        { $pull: { 'orderDetails': { 'orderId': orderId } } }
+    );
+
+    if (result.matchedCount > 0) {
+        //successful deletation
+    } else {
+        //error
+    }
