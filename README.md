@@ -601,6 +601,16 @@ Below the 'uploader' function code
         res.status(200).json({....});
     }
 
+or from directly 'req' files
+
+    if(req.files && req.files.length > 0){
+
+        const promises = req.files.map((file)=>{
+            unlinkFileFromLocal(file.filename,"product");
+        });
+        await Promise.all(promises);
+    }
+
 Below the 'unlinkFileFromLocal' code
 
     const unlinkFileFromLocal = function (fileName,subFolder){
@@ -615,11 +625,11 @@ Below the 'unlinkFileFromLocal' code
         return;
     }
 
-Below the 'unlikeFile' code
+Below the 'unlinkFile' code
 
-    async function unlikeFile(fileName,subFolderPath){
+    async function unlinkFile(fileName,subFolderPath){
 
-    try {
+        try {
 
             const mainDirectory =path.resolve (__dirname,"..");
             const uploadFolder = `${mainDirectory}/public/${subFolderPath}/`;
