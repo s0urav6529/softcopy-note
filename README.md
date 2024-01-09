@@ -600,3 +600,37 @@ Below the 'uploader' function code
         await xModel.findByIdAndDelete({ _id : req.query.id });
         res.status(200).json({....});
     }
+
+Below the 'unlinkFileFromLocal' code
+
+    const unlinkFileFromLocal = function (fileName,subFolder){
+
+        unlikeFile(fileName,subFolder)
+        .then(res=>{
+            console.log("File deleted successfully !");
+        })
+        .catch(error=>{
+            console.log(error);
+        });
+        return;
+    }
+
+Below the 'unlikeFile' code
+
+    async function unlikeFile(fileName,subFolderPath){
+
+    try {
+
+            const mainDirectory =path.resolve (__dirname,"..");
+            const uploadFolder = `${mainDirectory}/public/${subFolderPath}/`;
+
+            const filePath = path.join(uploadFolder,fileName);
+
+            await fs.access(filePath, fs.constants.F_OK);
+            await fs.unlink(filePath);
+            return true;
+
+        } catch (error) {
+            return false;
+        }
+    }
