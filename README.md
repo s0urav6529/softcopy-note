@@ -477,3 +477,5 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
     } else {
         //error
     }
+
+#Multer (For upload single & multiple file of any type) :
