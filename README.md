@@ -572,3 +572,10 @@ Below the 'uploader' function code
     }else{
         image.push("Image not found");
     }
+
+    const newX = new xModel({
+        ...
+        xImage:image,
+        ...
+    });
+    await newX.save();
