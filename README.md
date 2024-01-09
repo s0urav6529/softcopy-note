@@ -480,6 +480,34 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
 
 # Multer (For upload single & multiple file of any type) :
 
-Suppose i have a route for upload file of any type and where avaterUpload is a middleware to upload file
+Suppose i have a route for upload file of any type and where 'avaterUpload' is a middleware to upload file
 
     xRoute.route("/add")post(isXlogin,avatarUpload,addX);
+
+Below the code of 'avaterUpload'
+
+    //require a function for upload the file
+    const {uploader} = require("../utilities/functions");
+
+
+    function avatarUpload(req,res,next){
+
+        // set all storage & format type
+        const upload = uploader("product",["image/jpeg","image/jpg","image/png"],
+        10000000,3,"Only .jpg, .jpeg or .png format allowed!");
+
+        // call the upload middleware
+        upload.any()(req,res,(err)=>{
+
+            if(err){
+                res.status(400).json(err.message);
+            }
+            else{
+                next();
+            }
+        })
+    }
+
+    module.exports = avatarUpload;
+
+Here, the arguments of 'uploader' are allowedType,maxFileSize in bytes, maximum number of file to upload at a time, & error message if file type is not matched.
