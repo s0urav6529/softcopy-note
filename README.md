@@ -479,3 +479,7 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
     }
 
 # Multer (For upload single & multiple file of any type) :
+
+Suppose i have a route for upload file of any type and where avaterUpload is a middleware to upload file
+
+    xRoute.route("/add")post(isXlogin,avatarUpload,addX);
