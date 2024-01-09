@@ -560,3 +560,15 @@ Below the 'uploader' function code
         return upload;
 
     }
+
+## Add multiple or single file name in database
+
+    let image = [];
+
+    if(req.files && req.files.length > 0){
+        for(let i = 0 ;i <req.files.length ; i++){
+            image.push(req.files[i].filename);
+        }
+    }else{
+        image.push("Image not found");
+    }
