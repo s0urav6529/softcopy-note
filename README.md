@@ -478,7 +478,7 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
         //error
     }
 
-# Multer (For upload single & multiple file of any type) :
+# Multer (For upload single & multiple file of any type in local storage) :
 
 Suppose i have a route for upload file of any type and where 'avaterUpload' is a middleware to upload file
 
@@ -579,3 +579,24 @@ Below the 'uploader' function code
         ...
     });
     await newX.save();
+
+## Delete multiple or single file from local storage
+
+    const xData = await xModel.findOne({_id : req.query.id});
+
+    if(xData){
+
+        // at first remove the x image from the local storage
+        const allFiles = xData.xImage;
+
+        if(allFiles[0] !== "Image not found"){
+
+            const promises = allFiles.map((fileName)=>{
+                unlinkFileFromLocal(fileName,"product");
+            });
+
+            await Promise.all(promises);
+        }
+        await xModel.findByIdAndDelete({ _id : req.query.id });
+        res.status(200).json({....});
+    }
