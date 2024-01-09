@@ -510,4 +510,53 @@ Below the code of 'avaterUpload'
 
     module.exports = avatarUpload;
 
-Here, the arguments of 'uploader' are allowedType,maxFileSize in bytes, maximum number of file to upload at a time, & error message if file type is not matched.
+Here, the arguments of 'uploader' are sub-folder path to store the file, allowedType,maxFileSize in bytes, maximum number of file to upload at a time, & error message if file type is not matched.
+
+Below the 'uploader' function code
+
+    const uploader = function (subFolderPath, allowedFileType, maxFileSize,maxCount, errorMsg){
+
+        //File upload folder
+        const mainDirectory =path.resolve (__dirname,"..");
+        const uploadFolder = `${mainDirectory}/public/${subFolderPath}/`;
+
+        //define the storage
+        const storage = multer.diskStorage({
+
+            //define destination
+            destination : (req,file,cb)=>{
+                cb(null,uploadFolder);
+            },
+
+            //define fileName
+            filename:(req,file,cb)=>{
+
+                //extract file extention
+                const fileExtention = path.extname(file.originalname);
+
+                //make a unique file name
+                const fileName = file.originalname.replace(fileExtention,"").split(" ").join("-")+ "-" + Date.now() + fileExtention;
+
+                cb(null,fileName);
+            },
+        });
+
+
+        const upload = multer({
+            storage: storage,
+            limits: {
+            fileSize: maxFileSize,
+            files : maxCount
+            },
+            fileFilter: (req, file, cb) => {
+            if (allowedFileType.includes(file.mimetype)) {
+                cb(null, true);
+            } else {
+                cb(errorMsg);
+            }
+            },
+        });
+
+        return upload;
+
+    }
