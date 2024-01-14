@@ -476,41 +476,41 @@ The findByIdAndUpdate() function is used to find a matching document, updates it
 
 # Multer (For upload single & multiple file of any type in local storage) :
 
-Suppose i have a route for upload file of any type and where 'avaterUpload' is a middleware to upload file
+Suppose i have a route for upload file of any type and where 'fileUploader' is a middleware to upload file
 
-    xRoute.route("/add")post(isXlogin,avatarUpload,addX);
+    xRoute.route("/add")post(isXlogin,fileUploader,addX);
 
-Below the code of 'avaterUpload'
+Below the code of 'fileUploader'
 
     //require a function for upload the file
     const {uploader} = require("../utilities/functions");
 
+    //for upload file
+    const fileUploader = function(req,res,next){
 
-    function avatarUpload(req,res,next){
-
-        // set all storage & format type
-        const upload = uploader("product",["image/jpeg","image/jpg","image/png"],
-        10000000,3,"Only .jpg, .jpeg or .png format allowed!");
+        const uploadFile = uploader("product",["image/jpeg","image/jpg","image/png"],
+                                10000000,3,"Only .jpg, .jpeg or .png format allowed!");
 
         // call the upload middleware
-        upload.any()(req,res,(err)=>{
+        uploadFile.any()(req,res,(err) => {
 
             if(err){
-                res.status(400).json(err.message);
+                return res.status(400).json(err.message);
             }
             else{
                 next();
             }
-        })
+        });
     }
 
-    module.exports = avatarUpload;
+    //exports
+    module.exports = {  fileUploader }
 
 Here, the arguments of 'uploader' are sub-folder path to store the file, allowedType,maxFileSize in bytes, maximum number of file to upload at a time, & error message if file type is not matched.
 
 Below the 'uploader' function code
 
-    const uploader = function (subFolderPath, allowedFileType, maxFileSize,maxCount, errorMsg){
+    const uploader = function (subFolderPath, allowedFileType, maxFileSize, maxCount, errorMsg){
 
         //File upload folder
         const mainDirectory =path.resolve (__dirname,"..");
@@ -556,6 +556,9 @@ Below the 'uploader' function code
         return upload;
 
     }
+
+    //exports
+    module.exports = { uploader }
 
 ## Add multiple or single file name in database
 
