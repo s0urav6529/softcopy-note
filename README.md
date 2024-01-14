@@ -301,15 +301,15 @@ For searchBox we use RegExp so that search can be dynamic.
 
 Make a special charecter escape function in utilities folder and named as escape.
 
-utilities/escape.js
+utilities/functions.js
 
     // function for regular expression
-    const escape = function(str){
+    const escapeString = function(str){
         return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
     };
 
     //exports
-    module.exports = escape;
+    module.exports = {escapeString};
 
 #### Create a controller for this search
 
