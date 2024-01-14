@@ -560,7 +560,7 @@ Below the 'uploader' function code
     //exports
     module.exports = { uploader }
 
-## Add/Update multiple or single file name in database
+## Add/Update multiple or single file name in database document
 
     const images = imagesArray(req.files);
 
@@ -571,7 +571,7 @@ Below the 'uploader' function code
     });
     await newX.save();
 
-Here, the code of 'imagesArray'
+### Here, the code of 'imagesArray' function
 
     const imagesArray = function(allfiles){
 
@@ -590,46 +590,35 @@ Here, the code of 'imagesArray'
         return images;
     }
 
-## Delete multiple or single file from local storage
+## Delete multiple or single file from local storage folder and document from database
 
     const xData = await xModel.findOne({_id : req.query.id});
 
     if(xData){
 
-        // at first remove the x image from the local storage
-        const allFiles = xData.xImage;
+        // at first remove images from the local storage folder
+        const imagesDelete =  unlinkFileFromLocal(xData.xImage,"<sub-filderName>");
 
-        if(allFiles[0] !== "Image not found"){
+        //after remove images we can delete details from database
+        const deleteDetails = xModel.findByIdAndDelete({ _id : req.query.id });
 
-            const promises = allFiles.map((fileName)=>{
-                unlinkFileFromLocal(fileName,"product");
-            });
+        await Promise.all([imagesDelete,deleteDetails]);
 
-            await Promise.all(promises);
-        }
-        await xModel.findByIdAndDelete({ _id : req.query.id });
-        res.status(200).json({....});
+        res.status(200).json({ message: "Product deleted successfully !"});
     }
 
-or from directly 'req' files
+### or from directly 'req.files'
 
-    if(req.files && req.files.length > 0){
+    const images =  imagesArray(req.files);
+    await unlinkFileFromLocal(images,"<sub-filderName>");
 
-        const promises = req.files.map((file)=>{
-            unlinkFileFromLocal(file.filename,"product");
-        });
-        await Promise.all(promises);
-    }
-
-Here, 'product' is the name of subFolder
-
-Below the 'unlinkFileFromLocal' code
+### Below the 'unlinkFileFromLocal' code
 
     const unlinkFileFromLocal = async (allFiles,subFolder)=>{
 
         if(allFiles[0] !== "Image not found"){
 
-            const promises = allFiles.map((fileName)=>{
+            const promises = allFiles.map((fileName) => {
 
                 unlinkFile(fileName,subFolder)
                 .then(res=>{
@@ -645,7 +634,7 @@ Below the 'unlinkFileFromLocal' code
         return;
     }
 
-Below the 'unlinkFile' code
+### Below the 'unlinkFile' code
 
     const unlinkFile = async(fileName,subFolderPath) => {
 
