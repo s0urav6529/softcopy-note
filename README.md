@@ -209,7 +209,7 @@ take one key from the above link & go below link to genarate hash key
 
     For GET, POST, PUT, DELETE send request
 
-### ALL types of CDN link
+# ALL types of CDN link
 
     https://cdnjs.com/libraries
 
@@ -221,7 +221,7 @@ Use this cdn in every header file of ejs.
 
     For use any middleware(error handler, router), body-parser,
 
-### Mongo server:
+# Mongo server:
 
 Starts cmd:
 
@@ -231,7 +231,7 @@ Status check cmd:
 
     systemctl status mongod
 
-### http-errors
+# http-errors
 
 For create error it provides a function called createError(“type the error”);
 
@@ -246,7 +246,7 @@ Some error code
     • 502    BadGateway
     • 504    GatewayTimeout
 
-### express-async-handler
+# express-async-handler
 
 It's designed to simplify error handling when dealing with asynchronous routes and middleware functions. It helps to mitigate this by catching any asynchronous errors that might occur within route handlers and forwarding them to the Express error-handling middleware.
 
@@ -262,7 +262,7 @@ It's designed to simplify error handling when dealing with asynchronous routes a
     res.status(500).send('Something went wrong!');
     });
 
-### body-parser
+# body-parser
 
 A "body parser" is a middleware used to parse the body of incoming HTTP requests,this body can include data of the requested method.This data could be in various formats such as JSON, URL-encoded data, or even multipart form data (for file uploads).The purpose of a body parser middleware is to take the raw data from the request and convert it into a more usable format that can be accessed in your route handlers or middleware functions.
 
@@ -275,7 +275,7 @@ Use in main server.js or app.js
     app.use(bodyParser.urlencoded({ extended: true })) ; parse application/x-www-form-urlencoded
     app.use(bodyParser.json()) ; parse application/json
 
-### bcrypt
+# bcrypt
 
 It return a promise thus we need to use await. Bcrypt.hash() is hashed any password for protection & also compare the given password with hashed password during the login authentication or any occasion.
 
@@ -289,7 +289,7 @@ Compare input password of the user with the hashed password of the database
 
 Here 'password' is input password & 'user.password' is hashed password
 
-### RegExp for search
+# RegExp for search
 
 For searchBox we use RegExp so that search can be dynamic.
 
