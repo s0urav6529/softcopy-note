@@ -183,7 +183,7 @@ Replace <database> with your database name
 
     https://api.wordpress.org/secret-key/1.1/salt/
 
-take one key & go below link to genarate hash key
+take one key from the above link & go below link to genarate hash key
 
     https://emn178.github.io/online-tools/sha1.html
 
