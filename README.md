@@ -357,7 +357,7 @@ $: Asserts the end of the string.
 
 "i": Specifies a case-insensitive match.
 
-### nodemailer
+# nodemailer
 
 At first need to intall nodemailer then go to this below link
 
