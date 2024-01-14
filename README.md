@@ -287,6 +287,8 @@ Compare input password of the user with the hashed password of the database
 
     if (await bcrypt.compare(password, user.password)) {/...}
 
+Here 'password' is input password & 'user.password' is hashed password
+
 ### RegExp for search
 
 For searchBox we use RegExp so that search can be dynamic.
