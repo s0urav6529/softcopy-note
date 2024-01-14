@@ -283,7 +283,7 @@ Password hashing
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-Compare password of the user
+Compare input password of the user with the hashed password of the database
 
     if (await bcrypt.compare(password, user.password)) {/...}
 
