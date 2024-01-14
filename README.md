@@ -654,3 +654,32 @@ Below the 'uploader' function code
             return error;
         }
     }
+
+# Category/subcategory wise product delete
+
+    const deleteSubCategory = async(req, res) => {
+
+        try {
+
+            //find product details of that sub-category
+            const productsDetails = await productModel.find({subCategoryId : req.query.id});
+
+            //delete each product image from the local folder
+            productsDetails.forEach(async(details) => {
+
+                await unlinkFileFromLocal(details.productImage,"product");
+
+            });
+
+            const deleteSubCategory = subCategoryModel.findByIdAndDelete({_id:req.query.id});
+
+            const deleteProducts = productModel.deleteMany({subCategoryId:req.query.id});
+
+            await Promise.all([deleteSubCategory,deleteProducts]);
+
+            res.status(200).json({message:"Sub-category deleted successfully !"});
+
+        } catch (error) {
+            res.status(400).json({error,message:"Problem during delete sub-category !"});
+        }
+    }
