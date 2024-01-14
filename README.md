@@ -313,35 +313,29 @@ utilities/functions.js
 
 #### Create a controller for this search
 
-        const escape = require("../utilities/escape")
+        const {escapeString} = require("../utilities/functions.js")
 
         const searchProduct = async(req, res)=>{
 
             try {
 
-                //fetch the query string
-                const searchQuery = req.params.item;
-
-                const category = new RegExp(escape(searchQuery),"i");
-                const subCategory = new RegExp(escape(searchQuery),"i");
-                const productName = new RegExp(escape(searchQuery),"i");
-                const price = new RegExp("^" + escape(searchQuery),"i");
-                const description = new RegExp(escape(searchQuery),"i");
+                const searchQuery = new RegExp(escapeString(req.params.item),"i");
+                const price = new RegExp("^" + escape(req.params.item),"i");
 
                 //now search this expession from the database
-                if(searchQuery !== ""){
+                if(req.params.item !== ""){
 
                     const productData = await productModel.find({
                         $or:[{
-                            category:category
+                            category: searchQuery
                         },{
-                            subCategory:subCategory
+                            subCategory: searchQuery
                         },{
-                            productName:productName
+                            productName: searchQuery
                         },{
-                            price:price
+                            price: price
                         },{
-                            description:description
+                            description: searchQuery
                         }]
                     });
 
