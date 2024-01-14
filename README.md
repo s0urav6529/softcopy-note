@@ -413,6 +413,28 @@ custom as your need. Then you will get the token from this link for further use.
 
 # mongoose
 
+### populate
+
+    const searchAllProduct = async(req,res) => {
+
+        try {
+
+            //just load all data from the database
+            const allData = await productModel.find({}).select('productName').
+                            populate({path:'categoryId subCategoryId' , select:'category subCategory'});
+
+            if(allData.length > 0){
+                res.status(200).json({allData,message:"All data loaded successfully !"});
+            }
+            else{
+                res.status(200).json({message:"No data found !"});
+            }
+
+        } catch (error) {
+            res.status(400).json({error,message:"Errors occur during search all products !"});
+        }
+    }
+
 ### Create a virtual 'id' instead of '\_id'
 
 Suppose we have a Schema name 'userSchema'.
