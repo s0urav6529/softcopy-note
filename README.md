@@ -560,24 +560,35 @@ Below the 'uploader' function code
     //exports
     module.exports = { uploader }
 
-## Add multiple or single file name in database
+## Add/Update multiple or single file name in database
 
-    let image = [];
-
-    if(req.files && req.files.length > 0){
-        for(let i = 0 ;i <req.files.length ; i++){
-            image.push(req.files[i].filename);
-        }
-    }else{
-        image.push("Image not found");
-    }
+    const images = imagesArray(req.files);
 
     const newX = new xModel({
         ...
-        xImage:image,
+        xImage:images,
         ...
     });
     await newX.save();
+
+Here, the code of 'imagesArray'
+
+    const imagesArray = function(allfiles){
+
+        let images = [];
+
+        if(allfiles.length > 0){
+
+            for(let i = 0 ;i <allfiles.length ; i++){
+
+                images.push(allfiles[i].filename);
+
+            }
+        }else{
+            images.push("Image not found");
+        }
+        return images;
+    }
 
 ## Delete multiple or single file from local storage
 
@@ -610,36 +621,47 @@ or from directly 'req' files
         await Promise.all(promises);
     }
 
+Here, 'product' is the name of subFolder
+
 Below the 'unlinkFileFromLocal' code
 
-    const unlinkFileFromLocal = function (fileName,subFolder){
+    const unlinkFileFromLocal = async (allFiles,subFolder)=>{
 
-        unlikeFile(fileName,subFolder)
-        .then(res=>{
-            console.log("File deleted successfully !");
-        })
-        .catch(error=>{
-            console.log(error);
-        });
+        if(allFiles[0] !== "Image not found"){
+
+            const promises = allFiles.map((fileName)=>{
+
+                unlinkFile(fileName,subFolder)
+                .then(res=>{
+                    console.log("File deleted successfully !");
+                })
+                .catch(error=>{
+                    console.log(error);
+                });
+            });
+
+            return await Promise.all(promises);
+        }
         return;
     }
 
 Below the 'unlinkFile' code
 
-    async function unlinkFile(fileName,subFolderPath){
+    const unlinkFile = async(fileName,subFolderPath) => {
 
         try {
 
             const mainDirectory =path.resolve (__dirname,"..");
-            const uploadFolder = `${mainDirectory}/public/${subFolderPath}/`;
+            const folderPath = `${mainDirectory}/public/${subFolderPath}/`;
 
-            const filePath = path.join(uploadFolder,fileName);
+            const filePath = path.join(folderPath,fileName);
 
-            await fs.access(filePath, fs.constants.F_OK);
-            await fs.unlink(filePath);
-            return true;
+            const fileAccess = fs.access(filePath, fs.constants.F_OK);
+            const fileUnlink = fs.unlink(filePath);
+
+            retrun await Promise.all([fileAccess,fileUnlink]);
 
         } catch (error) {
-            return false;
+            return error;
         }
     }
