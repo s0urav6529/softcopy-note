@@ -38,6 +38,22 @@
 
     ls -al  ~/.ssh
 
+### clone a git repository
+
+For cloning a git repositoty need to copy the ssh/https link for the repositoty.
+
+    git@github.com:xcompany/x-Managment.git [ssh]
+    https://github.com/xcompany/x-Managment.git.git [https]
+
+After copy that link, go to the os terminal create a directory or directly clone the link.
+
+    :git clone <git@github.com:xcompany/x.git>
+
+Then go to the directory
+
+    : cd x-Managment
+    : code .
+
 ## Git Command
 
 ### Stages changes in the all files for the next commit.
