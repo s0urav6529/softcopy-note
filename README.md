@@ -54,6 +54,12 @@ Then go to the directory
     : cd x-Managment
     : code .
 
+## npm
+
+For install all the dependency after clone a git repository that exist in this repository, the command is below.
+
+    npm i --force
+
 # Git Command
 
 ### Stages changes in the all files for the next commit.
