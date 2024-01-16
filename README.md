@@ -54,7 +54,7 @@ Then go to the directory
     : cd x-Managment
     : code .
 
-## Git Command
+# Git Command
 
 ### Stages changes in the all files for the next commit.
 
