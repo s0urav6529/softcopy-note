@@ -727,3 +727,51 @@ Below the 'uploader' function code
             res.status(400).json({error,message:"Problem during delete sub-category !"});
         }
     }
+
+# Cors
+
+Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers that restricts webpages from making requests to a different domain than the one that served the original web page.
+
+    npm install cors
+
+Now in index.js
+
+    const express = require('express');
+    const cors = require('cors');
+
+    const app = express();
+
+    // Enable CORS for all routes
+
+    const corsOptions = {
+        origin: 'http://localhost:8080',                // Specify the allowed origin (or use a function for dynamic origins)
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',      // Specify the allowed HTTP methods
+        allowedHeaders: 'Content-Type,Authorization',   // Specify the allowed headers
+        credentials: true,                              // Allow credentials (like cookies) to be sent with the request
+        optionsSuccessStatus: 204,                      // Specify the HTTP status code for successful preflight requests
+        preflightContinue: false,                       // Disable preflight requests caching
+        maxAge: 3600,                                   // Specify the maximum time (in seconds) that a preflight request can be cached
+    };
+
+or an array of allowed origins, can also use a function to dynamically determine the allowed origins based on the request.
+
+    const corsOptions = {
+        origin: function (origin, callback) {
+            // Check if the origin is allowed
+            const allowedOrigins = ['http://localhost:8080', 'https://yourclientdomain.com'];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        // other options...
+    };
+
+    app.use(cors(corsOptions));
+
+    // Your routes and other middleware go here
+    const port = 3000;
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    });
