@@ -132,6 +132,8 @@ For command below,
 
 ### Component of Dockerfile
 
+file name : dockerfile
+
     FROM node:latest            // which language
     WORKDIR /app                // destination directory
     COPY . .                    // source & destination
@@ -142,6 +144,15 @@ For command below,
 Create image for this app in docker
 
     docker build -t <imagename> <imagefolder>
+
+Docker ignore file
+
+file name : .dockerignore
+
+    node_modules
+    *.txt
+
+If we want to ignore all files that has '.txt' extention then simply use above method, this will work for all extention
 
 # Ubuntu installation
 
