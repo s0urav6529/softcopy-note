@@ -143,9 +143,9 @@ file name : dockerfile
 
 Create image for this app in docker
 
-    docker build -t <imagename> <imagefolder>
+    docker build -t <image name> <image folder>
 
-Docker ignore file
+### Docker ignore file
 
 file name : .dockerignore
 
@@ -153,6 +153,28 @@ file name : .dockerignore
     *.txt
 
 If we want to ignore all files that has '.txt' extention then simply use above method, this will work for all extention
+
+### Delete images & containers
+
+    docker images [display all images]
+
+Normally delete an image
+
+    docker image rm <image name>
+
+For force-fully delete a image, if that image already in use by any container
+
+    docker image rm <image name> -f
+
+    docker ps -a [display all containers]
+
+Normally delete an container
+
+    docker container rm <container name>
+
+For force-fully delete a container, if that container is on running
+
+    docker container rm <container name> -f
 
 # Ubuntu installation
 
