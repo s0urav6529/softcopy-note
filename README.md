@@ -122,6 +122,11 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
+# Docker installation
+
+    https://www.youtube.com/watch?v=Z6SLxKZicQc
+    https://docs.docker.com/desktop/install/ubuntu/
+
 # Ubuntu installation
 
     https://www.youtube.com/watch?v=y7rK4Nd88L4&t=532s
