@@ -130,6 +130,19 @@ For command below,
 
     https://docs.docker.com/desktop/install/ubuntu/
 
+### Component of Dockerfile
+
+    FROM node:latest            // which language
+    WORKDIR /app                // destination directory
+    COPY . .                    // source & destination
+    RUN npm install             // install all dependencies
+    EXPOSE 8000                 // running port of app
+    CMD [ "node", "index.js" ]  // running command
+
+Create image for this app in docker
+
+    docker build -t <imagename> <imagefolder>
+
 # Ubuntu installation
 
     https://www.youtube.com/watch?v=y7rK4Nd88L4&t=532s
