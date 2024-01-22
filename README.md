@@ -156,7 +156,9 @@ If we want to ignore all files that has '.txt' extention then simply use above m
 
 ### Delete images & containers
 
-    docker images [display all images]
+For display all images
+
+    docker images
 
 Normally delete an image
 
@@ -166,7 +168,9 @@ For force-fully delete a image, if that image already in use by any container
 
     docker image rm <image name> -f
 
-    docker ps -a [display all containers]
+For display all containers
+
+    docker ps -a
 
 Normally delete an container
 
