@@ -158,7 +158,9 @@ If we want to ignore all files that has '.txt' extention then simply use above m
 
 ### Create image for this app in docker
 
-    docker build -t <image name> <image folder>
+    docker build -t <image name> <image folder>  // <image folder> .
+
+Example : docker build -t dockertest-image .
 
 ### Delete images & containers
 
@@ -185,6 +187,26 @@ Normally delete an container
 For force-fully delete a container, if that container is on running
 
     docker container rm <container name> -f
+
+### Delete all images & container at a time
+
+    docker system prune -a
+
+### Create image using version
+
+    docker build -t <image name>:<version> <image folder>
+
+<image name> like dockertest-image, <version> v1,v2 etc & <image folder> .
+
+Example : docker build -t dockertest-image:v2 .
+
+### Run image image container using command line
+
+    docker run --name <conatainer name>-<version> -p <port1>:<port2> <image name>:<verion>
+
+<container name> like dockertest-container, <version> like v1,v2 etc, <port1> 5001, <port2> as your docker port & <image name> like dockertest-image & <version> like v1,v2 etc
+
+Example : docker run --name dockertest-container-v2 -p 5501:8000 dockertest-image:v2
 
 # Ubuntu installation 🔗
 
