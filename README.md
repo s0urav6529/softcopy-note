@@ -36,7 +36,7 @@
 
     https://www.youtube.com/watch?v=jfi9n4y-WFo&t=205s
 
-### SSH key set or not set checked-out
+### SSH 🔑 set or not set checked-out
 
     ls -al  ~/.ssh
 
@@ -231,7 +231,7 @@ For force-fully delete a container, if that container is on running
         "test": "mocha test/integration/fileRoutes.test.js",
     },
 
-### For uninstall a package
+### For uninstall a package 📦
 
     npm uninstall package-name
 
