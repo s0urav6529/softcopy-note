@@ -200,7 +200,7 @@ For force-fully delete a container, if that container is on running
 
 Example : docker build -t dockertest-image:v2 .
 
-### Run image image container using command line
+### Run image container using command line
 
     docker run --name <conatainer name>-<version> -p <port1>:<port2> <image name>:<verion>
 
