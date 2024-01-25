@@ -215,6 +215,17 @@ Here, 'container name' like dockertest-container, 'version' like v1,v2 etc, 'por
 
 Here --rm remove the current container and create a new container, -v is volumn & '/home/sourav/dockertest' is the root path of 'index.js' file & '/app' is the working directory.
 
+### Compose File in Docker
+
+file name - compose.yaml
+
+    services:
+        img:
+            build: .
+            container_name: dockertest-container
+            ports:
+            - 5501:8000
+
 # Ubuntu installation 🔗
 
     https://www.youtube.com/watch?v=y7rK4Nd88L4&t=532s
