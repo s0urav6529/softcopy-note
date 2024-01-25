@@ -19,11 +19,11 @@
 
     git config --list
 
-### Create ssh key for GitHub & system connection or check the link
+### Create ssh key for GitHub & system connection or check the 🔗
 
     Open GitHub setting
     SSH and GPS keys option
-    generating SSH keys (click the link )
+    generating SSH keys (click the 🔗 )
     Generation a new SSH key and adding it to the ss-agent(copy the command associated with email)
     open main terminal →paste copied command along with your email [Example : ssh-keygen -t ed25519 -C "sourav@gmail.com"]
     identify directory to save the key file
@@ -47,7 +47,7 @@ For cloning a git repositoty need to copy the ssh/https 🔗 for the repositoty.
     git@github.com:xcompany/x-Managment.git [ssh]
     https://github.com/xcompany/x-Managment.git.git [https]
 
-After copy that link, go to the os terminal create a directory or directly clone the link.
+After copy that 🔗, go to the os terminal create a directory or directly clone the 🔗.
 
     :git clone <git@github.com:xcompany/x.git>
 
@@ -265,15 +265,15 @@ create [.vscode] folder→create [settings.json]file and paste below code
 
 Replace <database> with your database name
 
-### COOKIE SECRET Link
+### 🍪 COOKIE SECRET 🔗
 
     https://api.wordpress.org/secret-key/1.1/salt/
 
-take one key from the above link & go below link to genarate hash key
+take one key from the above 🔗 & go below 🔗 to genarate hash key
 
     https://emn178.github.io/online-tools/sha1.html
 
-### JWT ACCESS TOKEN SECRET link
+### JWT ACCESS TOKEN SECRET 🔗
 
     https://www.javainuse.com/jwtgenerator
 
@@ -295,7 +295,7 @@ take one key from the above link & go below link to genarate hash key
 
     For GET, POST, PUT, DELETE send request
 
-# ALL types of CDN link
+# ALL types of CDN 🔗
 
     https://cdnjs.com/libraries
 
@@ -445,7 +445,7 @@ $: Asserts the end of the string.
 
 # nodemailer
 
-At first need to intall nodemailer then go to this below link
+At first need to intall nodemailer then go to this below 🔗
 
     https://ethereal.email/
 
@@ -495,7 +495,7 @@ Here,
 
     <http://localhost:8000/admin/resetPassword>
 
-custom as your need. Then you will get the token from this link for further use.
+custom as your need. Then you will get the token from this 🔗 for further use.
 
 # mongoose
 
