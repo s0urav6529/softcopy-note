@@ -213,7 +213,10 @@ Here, <container name> like dockertest-container, <version> like v1,v2 etc, <por
 
     docker run --name dockertest-container-v2 -p 5501:8000 --rm -v /home/sourav/dockertest:/app dockertest-image:v2
 
-Here --rm remove the current container and create a new container, -v is volumn & /home/sourav/dockertest is the root path of 'index.js' file & '/app' is the working directory.
+Here --rm remove the current container and create a new container
+-v is volumn
+'/home/sourav/dockertest' is the root path of 'index.js' file
+'/app' is the working directory.
 
 # Ubuntu installation 🔗
 
