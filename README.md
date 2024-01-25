@@ -122,7 +122,7 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
-# Docker installation
+# 🐳 Docker installation
 
     https://www.youtube.com/watch?v=Z6SLxKZicQc
 
@@ -130,7 +130,7 @@ For command below,
 
     https://docs.docker.com/desktop/install/ubuntu/
 
-### Docker course
+### 🐳 Docker course
 
     https://www.youtube.com/playlist?list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn
 
@@ -145,10 +145,6 @@ file name : dockerfile
     EXPOSE 8000                 // running port of app
     CMD [ "node", "index.js" ]  // running command
 
-Create image for this app in docker
-
-    docker build -t <image name> <image folder>
-
 ### Docker ignore file
 
 file name : .dockerignore
@@ -157,6 +153,10 @@ file name : .dockerignore
     *.txt
 
 If we want to ignore all files that has '.txt' extention then simply use above method, this will work for all extention
+
+### Create image for this app in docker
+
+    docker build -t <image name> <image folder>
 
 ### Delete images & containers
 
