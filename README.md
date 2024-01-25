@@ -197,15 +197,15 @@ For force-fully delete a container, if that container is on running
 
     docker build -t <image name>:<version> <image folder>
 
-Here, <imagename> like dockertest-image, <version> v1,v2 etc & <imagefolder> like '.'
+Here, 'image name' like dockertest-image, 'version' v1,v2 etc & 'image folder' like '.'
 
     docker build -t dockertest-image:v2 .
 
 ### Run image container version in cmd
 
-    docker run --name <conatainer name>-<version> -p <port1>:<port2> <image name>:<verion>
+    docker run --name <conatainer name>-<version> -p <port1>:<port2> <image name>:<version>
 
-Here, <container name> like dockertest-container, <version> like v1,v2 etc, <port1> 5001, <port2> as your docker port & <image name> like dockertest-image & <version> like v1,v2 etc
+Here, 'container name' like dockertest-container, 'version' like v1,v2 etc, 'port1' 5001, 'port2' as your docker port & 'image name' like dockertest-image
 
     docker run --name dockertest-container-v2 -p 5501:8000 dockertest-image:v2
 
