@@ -197,7 +197,7 @@ For force-fully delete a container, if that container is on running
 
     docker build -t <image name>:<version> <image folder>
 
-Here, <image name> like dockertest-image, <version> v1,v2 etc & <image folder> .
+Here, <imagename> like dockertest-image, <version> v1,v2 etc & <imagefolder> like '.'
 
     docker build -t dockertest-image:v2 .
 
