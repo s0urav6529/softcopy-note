@@ -138,18 +138,19 @@ For command below 🔗
 
 ### Component of Dockerfile
 
-file name : dockerfile
+file name - dockerfile
 
-    FROM node:latest            // which language
-    WORKDIR /app                // destination directory
-    COPY . .                    // source & destination
-    RUN npm install             // install all dependencies
-    EXPOSE 8000                 // running port of app
-    CMD [ "node", "index.js" ]  // running command
+    FROM node:latest                // which language
+    RUN npm install -g nodemon      //install nodemon for instant change
+    WORKDIR /app                    // storing directory
+    COPY . .                        // source & destination
+    RUN npm install                 // install all dependencies
+    EXPOSE 8000                     // running port of app
+    CMD [ "nodemon", "index.js" ]   // running command
 
 ### Docker ignore file
 
-file name : .dockerignore
+file name - .dockerignore
 
     node_modules
     *.txt
@@ -200,13 +201,19 @@ For force-fully delete a container, if that container is on running
 
 Example : docker build -t dockertest-image:v2 .
 
-### Run image container using command line
+### Run image container version in cmd
 
     docker run --name <conatainer name>-<version> -p <port1>:<port2> <image name>:<verion>
 
     <container name> like dockertest-container, <version> like v1,v2 etc, <port1> 5001, <port2> as your docker port & <image name> like dockertest-image & <version> like v1,v2 etc
 
 Example : docker run --name dockertest-container-v2 -p 5501:8000 dockertest-image:v2
+
+### Run image container volumn in cmd
+
+    docker run --name dockertest-container-v1 -p 5051:8000 --rm -v /home/sourav/dockertest:/app dockertest:v1
+
+Here --rm remove the current container and create a new container, -v is volumn & /home/sourav/dockertest is the root path of 'index.js' file & '/app' is the working directory.
 
 # Ubuntu installation 🔗
 
