@@ -1,3 +1,5 @@
+# 📚 Documentation
+
 # Git Setting
 
 ### Check git installed or not
@@ -8,7 +10,7 @@
 
     sudo apt install git
 
-### Configure git
+### 🔧 Configure git
 
     git config --global user.name <your-name>
     git config --global user.email <your-email>
@@ -30,7 +32,7 @@
     open .ssh folder -> open .pub file -> copy the text
     paste the key to ssh key of GitHub → enter GitHub password → done.
 
-### Add SSH key link
+### Add SSH key 🔗
 
     https://www.youtube.com/watch?v=jfi9n4y-WFo&t=205s
 
@@ -40,7 +42,7 @@
 
 ### clone a git repository
 
-For cloning a git repositoty need to copy the ssh/https link for the repositoty.
+For cloning a git repositoty need to copy the ssh/https 🔗 for the repositoty.
 
     git@github.com:xcompany/x-Managment.git [ssh]
     https://github.com/xcompany/x-Managment.git.git [https]
@@ -122,15 +124,15 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
-# 🐳 Docker installation
+# 🐳 Docker installation 🔗
 
     https://www.youtube.com/watch?v=Z6SLxKZicQc
 
-For command below,
+For command below 🔗
 
     https://docs.docker.com/desktop/install/ubuntu/
 
-### 🐳 Docker course
+### 🐳 Docker course 🔗
 
     https://www.youtube.com/playlist?list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn
 
@@ -184,7 +186,7 @@ For force-fully delete a container, if that container is on running
 
     docker container rm <container name> -f
 
-# Ubuntu installation
+# Ubuntu installation 🔗
 
     https://www.youtube.com/watch?v=y7rK4Nd88L4&t=532s
 
