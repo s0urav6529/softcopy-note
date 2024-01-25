@@ -211,7 +211,7 @@ Example : docker run --name dockertest-container-v2 -p 5501:8000 dockertest-imag
 
 ### Run image container volumn in cmd
 
-    docker run --name dockertest-container-v1 -p 5051:8000 --rm -v /home/sourav/dockertest:/app dockertest:v1
+    docker run --name dockertest-container-v2 -p 5501:8000 --rm -v /home/sourav/dockertest:/app dockertest-image:v2
 
 Here --rm remove the current container and create a new container, -v is volumn & /home/sourav/dockertest is the root path of 'index.js' file & '/app' is the working directory.
 
