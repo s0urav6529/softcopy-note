@@ -176,6 +176,7 @@ Example :
 For display all images
 
     docker images
+    docker image ls
 
 Normally delete an image
 
