@@ -171,6 +171,10 @@ Example :
 
     docker build -t dockertest-image .
 
+### Run image directly using cmd
+
+    docker run dockertest
+
 ### Delete images & containers
 
 For display all images
