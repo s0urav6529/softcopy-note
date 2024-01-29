@@ -163,6 +163,8 @@ If we want to ignore all files that has '.txt' extention then simply use above m
 
 ### Create image for an app in docker
 
+Suppose my app name is dockertest & i used image name also as dockertest.
+
 Syntax :
 
     docker build -t <image name> <image folder>
