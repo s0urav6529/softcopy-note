@@ -163,9 +163,11 @@ If we want to ignore all files that has '.txt' extention then simply use above m
 
 ### Create image for this app in docker
 
-    docker build -t <image name> <image folder>  // <image folder> .
+    docker build -t <image name> <image folder>
 
-Example : docker build -t dockertest-image .
+Example :
+
+    docker build -t dockertest-image .
 
 ### Delete images & containers
 
