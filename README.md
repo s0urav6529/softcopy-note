@@ -124,7 +124,11 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
-# 🐳 Docker installation 🔗
+# 🐳 Docker
+
+Docker is a software platform that simplifies the process of building, running, managing & distributing application.
+
+### 🐳 Docker installation 🔗
 
     https://www.youtube.com/watch?v=Z6SLxKZicQc
 
@@ -225,6 +229,14 @@ file name - compose.yaml
             container_name: dockertest-container
             ports:
             - 5501:8000
+
+### Run below command for create a continer
+
+    docker compose up
+
+### Share image on docker hub
+
+Docker hub is a repository of docker images. Where many public images are available.
 
 # Ubuntu installation 🔗
 
