@@ -161,7 +161,9 @@ file name - .dockerignore
 
 If we want to ignore all files that has '.txt' extention then simply use above method, this will work for all extention
 
-### Create image for this app in docker
+### Create image for an app in docker
+
+Syntax :
 
     docker build -t <image name> <image folder>
 
