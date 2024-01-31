@@ -124,11 +124,15 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
-# AWS - S3
+# AWS - s3
 
-### S3- View in AWS
+### s3- View in AWS
 
 ![Screenshot from 2024-01-31 11-28-29](https://github.com/s0urav6529/softcopy-note/assets/96060029/f76a3102-d50f-4a80-b491-f6f77147dfae)
+
+### How to access public files form s3
+
+![Screenshot from 2024-01-31 11-35-17](https://github.com/s0urav6529/softcopy-note/assets/96060029/bd397dee-b962-48c1-a673-c9d99e1b6021)
 
 # 🐳 Docker
 
