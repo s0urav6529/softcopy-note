@@ -126,6 +126,8 @@ If you want to remove Git version control from a project, you essentially need t
 
 # AWS - S3
 
+### S3- View in AWS
+
 ![Screenshot from 2024-01-31 11-28-29](https://github.com/s0urav6529/softcopy-note/assets/96060029/f76a3102-d50f-4a80-b491-f6f77147dfae)
 
 # 🐳 Docker
