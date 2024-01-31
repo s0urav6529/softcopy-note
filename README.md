@@ -134,6 +134,8 @@ If you want to remove Git version control from a project, you essentially need t
 
 ![Screenshot from 2024-01-31 11-35-17](https://github.com/s0urav6529/softcopy-note/assets/96060029/bd397dee-b962-48c1-a673-c9d99e1b6021)
 
+Here, 'piyusgargdev-yt' is the bucket name and 's3.ap-south-1.amazonaws.com' is the service name & rest is the files name or key.
+
 # 🐳 Docker
 
 Docker is a software platform that simplifies the process of building, running, managing & distributing application.
