@@ -142,6 +142,10 @@ Here, 'piyusgargdev-yt' is the bucket name and 's3.ap-south-1.amazonaws.com' is 
 
 This will not work because there is no presigned URL for access, so we need token & singiture to access.
 
+So, need to make an account on s3 & get access token so that private files can be accessed. Suppose we have an user named 'John' & create an access token of this user so whenever this user tries to access files then s3 checkes if this token is valid for access files , if yes then ok otherwise it will denied again.
+
+![Screenshot from 2024-01-31 11-53-13](https://github.com/s0urav6529/softcopy-note/assets/96060029/576555c7-e956-40d5-bf9d-0f04783b78f7)
+
 # 🐳 Docker
 
 Docker is a software platform that simplifies the process of building, running, managing & distributing application.
