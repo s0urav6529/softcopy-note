@@ -136,6 +136,12 @@ If you want to remove Git version control from a project, you essentially need t
 
 Here, 'piyusgargdev-yt' is the bucket name and 's3.ap-south-1.amazonaws.com' is the service name & rest is the files name or key.
 
+### How to access private files form s3
+
+![Screenshot from 2024-01-31 11-47-39](https://github.com/s0urav6529/softcopy-note/assets/96060029/a5147e9e-384d-44a2-bb7b-0b4dd2fb8137)
+
+This will not work because there is no presigned URL for access, so we need token & singiture to access.
+
 # 🐳 Docker
 
 Docker is a software platform that simplifies the process of building, running, managing & distributing application.
