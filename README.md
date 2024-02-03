@@ -185,7 +185,7 @@ Configuration code of s3
     //@exports
     module.exports = { storageConfig };
 
-upload code of any route
+upload code for any route
 
     const upload = multer({
         storage : storageConfig
@@ -193,7 +193,7 @@ upload code of any route
 
     router.route("/").post(upload.single('file'),(req,res) => {
 
-        //for uploaded file url
+        //uploaded file url
         res.send(req.file.location);
     });
 
