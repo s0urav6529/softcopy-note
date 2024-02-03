@@ -171,13 +171,15 @@ Configuration code of s3
 
     //@create storage configuration
     const storageConfig = multerS3({
+
         s3: s3Client,
         bucket: process.env.AWS_BUCKET_NAME,
         acl: 'public-read',
         contentType: multerS3.AUTO_CONTENT_TYPE,
+
         key: (req, file, cb) => {
-                const fileExtention = path.extname(file.originalname);
-                const key = file.originalname.replace(fileExtention,"").split(" ").join("-")+ "-" + Date.now() + fileExtention;
+            const fileExtention = path.extname(file.originalname);
+            const key = file.originalname.replace(fileExtention,"").split(" ").join("-")+ "-" + Date.now() + fileExtention;
             cb(null, key);
         },
     });
