@@ -146,6 +146,57 @@ So, need to make an account on s3 & get access token so that private files can b
 
 ![Screenshot from 2024-01-31 11-53-13](https://github.com/s0urav6529/softcopy-note/assets/96060029/576555c7-e956-40d5-bf9d-0f04783b78f7)
 
+There are two types of presigned URL (GET & PUT object)
+
+### s3 image upload using multer & multer-s3
+
+Configuration code of s3
+
+    //@external module
+    const { S3Client } = require('@aws-sdk/client-s3');
+    const multerS3 = require('multer-s3');
+    const path = require("path");
+
+    //@configure AWS SDK with your credentials and region
+    const awsConfig = {
+        region: process.env.AWS_BUCKET_REGION,
+        credentials: {
+            accessKeyId: process.env.AWS_ACCESS_KEY,
+            secretAccessKey: process.env.AWS_SECRET_KEY
+        },
+    };
+
+    //@create s3 client instance
+    const s3Client = new S3Client(awsConfig);
+
+    //@create storage configuration
+    const storageConfig = multerS3({
+        s3: s3Client,
+        bucket: process.env.AWS_BUCKET_NAME,
+        acl: 'public-read',
+        contentType: multerS3.AUTO_CONTENT_TYPE,
+        key: (req, file, cb) => {
+                const fileExtention = path.extname(file.originalname);
+                const key = file.originalname.replace(fileExtention,"").split(" ").join("-")+ "-" + Date.now() + fileExtention;
+            cb(null, key);
+        },
+    });
+
+    //@exports
+    module.exports = { storageConfig };
+
+upload code of any route
+
+    const upload = multer({
+        storage : storageConfig
+    });
+
+    router.route("/").post(upload.single('file'),(req,res) => {
+
+        //for uploaded file url
+        res.send(req.file.location);
+    });
+
 # 🐳 Docker
 
 Docker is a software platform that simplifies the process of building, running, managing & distributing application.
