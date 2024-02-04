@@ -200,6 +200,7 @@ upload code for any route
         res.send(req.file.location);
     });
 
+    //for multiple file upload
     router.route("/").post(upload.array('files',3),(req,res) => {
 
         //uploaded file url
