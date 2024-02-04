@@ -193,10 +193,19 @@ upload code for any route
         storage : storageConfig
     });
 
+    //for single file upload
     router.route("/").post(upload.single('file'),(req,res) => {
 
         //uploaded file url
         res.send(req.file.location);
+    });
+
+    router.route("/").post(upload.array('files',3),(req,res) => {
+
+        //uploaded file url
+        req.files.map((file)=>{
+            console.log('File uploaded to S3:', file.location);
+        });
     });
 
 # 🐳 Docker
