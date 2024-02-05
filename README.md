@@ -209,6 +209,23 @@ upload code for any route
         });
     });
 
+    //for multipart file upload
+
+    const uploadMultiple = upload.fields([{ name: 'photo', maxCount: 1 }, { name: 'document', maxCount: 8 }]);
+
+    app.post('/multipart', uploadMultiple, (req, res) => {
+        try {
+
+            console.log(req.files['photo']);
+            console.log(req.files['document']);
+            res.status(200).send("file uploaded successfully");
+
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Internal Server Error');
+        }
+    });
+
 # 🐳 Docker
 
 Docker is a software platform that simplifies the process of building, running, managing & distributing application.
