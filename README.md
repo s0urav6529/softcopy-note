@@ -1049,3 +1049,11 @@ formateDate funtion is below.
 Now to see the version
 
     python --version
+
+### For install Face recognition
+
+    sudo apt-get install build-essential cmake
+    sudo apt-get install libopenblas-dev liblapack-dev
+    sudo apt-get install libx11-dev libgtk-3-dev
+    sudo apt-get install libboost-all-dev
+    pip install face_recognition
