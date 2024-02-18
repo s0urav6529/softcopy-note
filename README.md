@@ -1035,3 +1035,5 @@ formateDate funtion is below.
             return;
         }
     }
+
+# 🐍 installation command for ubunto
