@@ -1037,3 +1037,15 @@ formateDate funtion is below.
     }
 
 # 🐍 installation command for ubunto
+
+    sudo apt update
+    sudo apt install software-properties-common
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install python3.12
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 2
+    sudo apt install python3.12-dev python3.12-venv python3.12-distutils python3.12-gdbm python3.12-tk python3.12-lib2to3
+
+Now to see the version
+
+    python --version
