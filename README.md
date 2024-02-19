@@ -1066,3 +1066,14 @@ Now, go to the directory where this file is downloaded using terminal,then copy 
 
     sudo chmod 755 xampp-linux-x64-8.2.12-0-installer.run
     sudo ./xampp-linux-x64-8.2.12-0-installer.run
+
+After successful installation, go main terminal
+
+    cd /opt/lampp/              [xammp installation path]
+    ls
+    cd htdocs/
+    sudo mkdir phpsite
+    cd phpsite
+    code .
+
+    localhost:80/phpsite [visite the site]
