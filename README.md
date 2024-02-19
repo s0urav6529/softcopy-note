@@ -1057,3 +1057,7 @@ Now to see the version
     sudo apt-get install libx11-dev libgtk-3-dev
     sudo apt-get install libboost-all-dev
     pip install face_recognition
+
+# installation of XAMPP
+
+    https://www.apachefriends.org/
