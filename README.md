@@ -1061,3 +1061,8 @@ Now to see the version
 # installation of XAMPP
 
     https://www.apachefriends.org/
+
+Now, go to the directory where this file is downloaded using terminal,then copy & peste those command
+
+    sudo chmod 755 xampp-linux-x64-8.2.12-0-installer.run
+    sudo ./xampp-linux-x64-8.2.12-0-installer.run
