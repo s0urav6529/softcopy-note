@@ -1050,13 +1050,17 @@ Now to see the version
 
     python --version
 
-### For install Face recognition
+### face_recognition pakage
 
     sudo apt-get install build-essential cmake
     sudo apt-get install libopenblas-dev liblapack-dev
     sudo apt-get install libx11-dev libgtk-3-dev
     sudo apt-get install libboost-all-dev
     pip install face_recognition
+
+### cv2 pakage
+
+    pip install opencv-python
 
 # installation of XAMPP
 
@@ -1077,3 +1081,12 @@ After successful installation, go main terminal
     code .
 
     localhost:80/phpsite [visite the site]
+
+# 🔥 installation
+
+    https://firebase.google.com/docs/cli#cli-ci-systems
+
+cmd
+curl -sL https://firebase.tools | bash
+firebase login
+firebase projects:list
