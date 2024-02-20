@@ -1084,9 +1084,8 @@ After successful installation, go main terminal
 
 # 🔥 installation
 
-    https://firebase.google.com/docs/cli#cli-ci-systems
+    https://firebase.google.com/docs/cli#cli-ci-systems  [website]
 
-cmd
-curl -sL https://firebase.tools | bash
-firebase login
-firebase projects:list
+    curl -sL https://firebase.tools | bash
+    firebase login
+    firebase projects:list
