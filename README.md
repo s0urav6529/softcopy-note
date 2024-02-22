@@ -1062,6 +1062,14 @@ Now to see the version
 
     pip install opencv-python
 
+### .env file
+
+![Screenshot from 2024-02-22 11-03-14](https://github.com/s0urav6529/softcopy-note/assets/96060029/21b8392e-5073-4790-9969-2936040ec633)
+
+    pip install python-dotenv python-decouple
+
+![Screenshot from 2024-02-22 11-03-30](https://github.com/s0urav6529/softcopy-note/assets/96060029/2f626fb8-2deb-484b-b20b-f339b9415a2e)
+
 # installation of XAMPP
 
     https://www.apachefriends.org/
