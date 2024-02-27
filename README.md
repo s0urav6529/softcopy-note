@@ -124,6 +124,21 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
+### To clear the cache and update the ignored files :
+
+syntex :
+
+    git rm --cached <file name>
+
+example :
+
+    git rm --cached .env
+    git rm --cached serviceAccountKey.json
+
+    git commit -m "Update .gitignore to exclude serviceAccountKey.json"
+
+    git push -u origin <branch name>
+
 # AWS - s3
 
 ### s3- View in AWS
