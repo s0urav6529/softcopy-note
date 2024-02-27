@@ -134,6 +134,7 @@ example :
 
     git rm --cached .env
     git rm --cached serviceAccountKey.json
+    git rm -r --cached __pycache__
 
     git commit -m "Update .gitignore to exclude serviceAccountKey.json"
 
