@@ -400,7 +400,7 @@ Docker hub is a repository of docker images. Where many public images are availa
     jsonwebtoken [for creating json]
     express-async-handler [for error handling]
     mongoose [for database]
-    bcrypt [for hashing]
+    bcryptjs [for hashing]
     moment [Moment module is used for parsing, validating, manipulating, and displaying dates and times in JavaScript]
     ejs [for ejs template]
     express-validator [for validating result]
@@ -410,6 +410,7 @@ Docker hub is a repository of docker images. Where many public images are availa
     nodemailer [for sending mail in case of forget password]
     randomstring [use as a token in case of forget password etc]
     socket.io [for install web socket]
+    morgan [HTTP request logger]
 
 ### Go to pakage.json and change this script part
 
