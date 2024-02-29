@@ -619,29 +619,6 @@ or an array of allowed origins, can also use a function to dynamically determine
         console.log(`Server is running on port ${port}`);
     });
 
-# Format Date
-
-Suppose, 'sDate' is a const variable need to change the format.
-
-    const startDate = formatDate(sDate);
-
-formateDate funtion is below.
-
-    const moment = require("moment");
-
-    const formatDate = function(date){
-
-        const parseDate = moment(date,'DD-MM-YYYY',true);
-
-        if(parseDate.isValid()){
-            return parseDate.format('YYYY-MM-DD');
-        }
-        else {
-            console.log("Invalid date format !");
-            return;
-        }
-    }
-
 # 🐍 installation command for ubunto
 
     sudo apt update
