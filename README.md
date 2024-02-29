@@ -140,108 +140,6 @@ example :
 
     git push -u origin <branch name>
 
-# AWS - s3
-
-### s3- View in AWS
-
-![Screenshot from 2024-01-31 11-28-29](https://github.com/s0urav6529/softcopy-note/assets/96060029/f76a3102-d50f-4a80-b491-f6f77147dfae)
-
-### How to access public files form s3
-
-![Screenshot from 2024-01-31 11-35-17](https://github.com/s0urav6529/softcopy-note/assets/96060029/bd397dee-b962-48c1-a673-c9d99e1b6021)
-
-Here, 'piyusgargdev-yt' is the bucket name and 's3.ap-south-1.amazonaws.com' is the service name & rest is the files name or key.
-
-### How to access private files form s3
-
-![Screenshot from 2024-01-31 11-47-39](https://github.com/s0urav6529/softcopy-note/assets/96060029/a5147e9e-384d-44a2-bb7b-0b4dd2fb8137)
-
-This will not work because there is no presigned URL for access, so we need token & singiture to access.
-
-So, need to make an account on s3 & get access token so that private files can be accessed. Suppose we have an user named 'John' & create an access token of this user so whenever this user tries to access files then s3 checkes if this token is valid for access files , if yes then ok otherwise it will denied again.
-
-![Screenshot from 2024-01-31 11-53-13](https://github.com/s0urav6529/softcopy-note/assets/96060029/576555c7-e956-40d5-bf9d-0f04783b78f7)
-
-There are two types of presigned URL (GET & PUT object)
-
-### s3 image upload using multer & multer-s3
-
-Configuration code of s3
-
-    //@external module
-    const { S3Client } = require('@aws-sdk/client-s3');
-    const multerS3 = require('multer-s3');
-    const path = require("path");
-
-    //@configure AWS SDK with your credentials and region
-    const awsConfig = {
-        region: process.env.AWS_BUCKET_REGION,
-        credentials: {
-            accessKeyId: process.env.AWS_ACCESS_KEY,
-            secretAccessKey: process.env.AWS_SECRET_KEY
-        },
-    };
-
-    //@create s3 client instance
-    const s3Client = new S3Client(awsConfig);
-
-    //@create storage configuration
-    const storageConfig = multerS3({
-
-        s3: s3Client,
-        bucket: process.env.AWS_BUCKET_NAME,
-        acl: 'public-read',
-        contentType: multerS3.AUTO_CONTENT_TYPE,
-
-        key: (req, file, cb) => {
-            const fileExtention = path.extname(file.originalname);
-            const key = file.originalname.replace(fileExtention,"").split(" ").join("-")+ "-" + Date.now() + fileExtention;
-            cb(null, key);
-        },
-    });
-
-    //@exports
-    module.exports = { storageConfig };
-
-upload code for any route
-
-    const upload = multer({
-        storage : storageConfig
-    });
-
-    //for single file upload
-    router.route("/").post(upload.single('file'),(req,res) => {
-
-        //uploaded file url
-        res.send(req.file.location);
-    });
-
-    //for multiple file upload
-    router.route("/").post(upload.array('files',3),(req,res) => {
-
-        //uploaded file url
-        req.files.map((file)=>{
-            console.log('File uploaded to S3:', file.location);
-        });
-    });
-
-    //for multipart file upload
-
-    const uploadMultiple = upload.fields([{ name: 'photo', maxCount: 1 }, { name: 'document', maxCount: 8 }]);
-
-    app.post('/multipart', uploadMultiple, (req, res) => {
-        try {
-
-            console.log(req.files['photo']);
-            console.log(req.files['document']);
-            res.status(200).send("file uploaded successfully");
-
-        } catch (error) {
-            console.error(error);
-            res.status(500).send('Internal Server Error');
-        }
-    });
-
 # 🐳 Docker
 
 Docker is a software platform that simplifies the process of building, running, managing & distributing application.
@@ -379,52 +277,6 @@ Docker hub is a repository of docker images. Where many public images are availa
 
     https://www.youtube.com/watch?v=y7rK4Nd88L4&t=532s
 
-# Open a new project on vs-code:
-
-### Open main terminal
-
-    [mkdir appname](exp : contact-app) → [cd appname] → [code .] (Will take you to vs-code)
-
-### Go to vs-code terminal and initialize the project
-
-    npm init →then give the info as instruction
-
-### Installation external module
-
-    npm install dotenv [for environment setup]
-    express
-    nodemon
-    body-parser [for parsing object,json & other unreadable file]
-    http-errors [for error-handling]
-    cookie-parser [for cookie]
-    jsonwebtoken [for creating json]
-    express-async-handler [for error handling]
-    mongoose [for database]
-    bcryptjs [for hashing]
-    moment [Moment module is used for parsing, validating, manipulating, and displaying dates and times in JavaScript]
-    ejs [for ejs template]
-    express-validator [for validating result]
-    multer [for file upload]
-    socket.io [for real time communication]
-    express-session [for create login session]
-    nodemailer [for sending mail in case of forget password]
-    randomstring [use as a token in case of forget password etc]
-    socket.io [for install web socket]
-    morgan [HTTP request logger]
-
-### Go to pakage.json and change this script part
-
-    "scripts": {
-        "start": "NODE_ENV=development nodemon app.js" or
-        "start": "nodemon app.js",
-        "prod": "NODE_ENV=production node app.js",
-        "test": "mocha test/integration/fileRoutes.test.js",
-    },
-
-### For uninstall a package 📦
-
-    npm uninstall package-name
-
 ### install(if not) prettier from extensions
 
 create [.vscode] folder→create [settings.json]file and paste below code
@@ -437,54 +289,6 @@ create [.vscode] folder→create [settings.json]file and paste below code
         }
     }
 
-### For run project
-
-    npm start
-
-### Create .env file paste this code (To access this file data use process.env.PORT/APP...etc)
-
-    PORT=5000
-    APP_NAME=
-    MONGO_CONNECTION_STRING=mongodb://localhost/<databasename>
-    MONGOURI=mongodb+srv://Foodline:<password>@cluster0.szpnieh.mongodb.net/<databasename>?retryWrites=true&w=majority [for mongo atlas]
-    COOKIE_SECRET=from the below (Cookie secret link)
-    JWT_ACCESS_TOKEN_SECRET=from the below (jwt link)
-    JWT_EXPIRY=86400000  // as your choice in milisecond
-    COOKIE_NAME= anything
-    APP_URL=http://localhost:portno
-
-Replace <database> with your database name
-
-### 🍪 COOKIE SECRET 🔗
-
-    https://api.wordpress.org/secret-key/1.1/salt/
-
-take one key from the above 🔗 & go below 🔗 to genarate hash key
-
-    https://emn178.github.io/online-tools/sha1.html
-
-### JWT ACCESS TOKEN SECRET 🔗
-
-    https://www.javainuse.com/jwtgenerator
-
-### Import different-types of external module in app.js/index.js (entry file)
-
-    const express = require("express");
-    const dotenv = require("dotenv").config();
-    const http = require("http");
-    const asyncHandler = require(“express-async-handler”);     [use in desired  file]
-
-    const app = express();
-
-    const server = http.createServer(app);
-    server.listen(process.env.PORT, () => {
-    console.log(`Listening to port ${process.env.PORT}`);
-    });
-
-### For Rest API install Thunder Client or Post Man from (extensions vs-code) or postman in outside
-
-    For GET, POST, PUT, DELETE send request
-
 # ALL types of CDN 🔗
 
     https://cdnjs.com/libraries
@@ -492,10 +296,6 @@ take one key from the above 🔗 & go below 🔗 to genarate hash key
 Use this cdn in every header file of ejs.
 
     Example → <script src="cdn link"></script>
-
-### When we use app.use()
-
-    For use any middleware(error handler, router), body-parser,
 
 # Mongo server:
 
@@ -506,21 +306,6 @@ Starts cmd:
 Status check cmd:
 
     systemctl status mongod
-
-# http-errors
-
-For create error it provides a function called createError(“type the error”);
-
-Some error code
-
-    • 400    BadRequest
-    • 401    Unauthorized
-    • 402    PaymentRequired
-    • 403    Forbidden
-    • 404    NotFound
-    • 500    InternalServerError
-    • 502    BadGateway
-    • 504    GatewayTimeout
 
 # express-async-handler
 
@@ -537,101 +322,6 @@ It's designed to simplify error handling when dealing with asynchronous routes a
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
     });
-
-# body-parser
-
-A "body parser" is a middleware used to parse the body of incoming HTTP requests,this body can include data of the requested method.This data could be in various formats such as JSON, URL-encoded data, or even multipart form data (for file uploads).The purpose of a body parser middleware is to take the raw data from the request and convert it into a more usable format that can be accessed in your route handlers or middleware functions.
-
-Install cmd : npm install body-parser
-
-Import as : const asyncHandler = require(“body-parser”);
-
-Use in main server.js or app.js
-
-    app.use(bodyParser.urlencoded({ extended: true })) ; parse application/x-www-form-urlencoded
-    app.use(bodyParser.json()) ; parse application/json
-
-# bcrypt
-
-It return a promise thus we need to use await. Bcrypt.hash() is hashed any password for protection & also compare the given password with hashed password during the login authentication or any occasion.
-
-Password hashing
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-Compare input password of the user with the hashed password of the database
-
-    if (await bcrypt.compare(password, user.password)) {/...}
-
-Here 'password' is input password & 'user.password' is hashed password
-
-# RegExp for search
-
-For searchBox we use RegExp so that search can be dynamic.
-
-#### search Route
-
-        productRoute.route("/searchProduct/:item").get(searchProduct);
-
-        //url -> http://localhost:8000/product/searchProduct/<item>
-
-Make a special charecter escape function in utilities folder and named as escape.
-
-utilities/functions.js
-
-    // function for regular expression
-    const escapeString = function(str){
-        return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
-    };
-
-    //exports
-    module.exports = {escapeString};
-
-#### Create a controller for this search
-
-        const {escapeString} = require("../utilities/functions.js")
-
-        const searchProduct = async(req, res)=>{
-
-            try {
-
-                const searchQuery = new RegExp(escapeString(req.params.item),"i");
-                const price = new RegExp("^" + escape(req.params.item),"i");
-
-                //now search this expession from the database
-                if(req.params.item !== ""){
-
-                    const productData = await productModel.find({
-                        $or:[{
-                            category: searchQuery
-                        },{
-                            subCategory: searchQuery
-                        },{
-                            productName: searchQuery
-                        },{
-                            price: price
-                        },{
-                            description: searchQuery
-                        }]
-                    });
-
-                    if(productData.length > 0){
-                        res.status(200).json({message:"Product found",productData});
-                    }
-                    else{
-                        res.status(200).json({message:"No product found!"});
-                    }
-                }
-            } catch (error) {
-                res.status(400).json({error,message:"Errors occurs during search product"});
-            }
-        }
-
-^: Asserts the start of the string.
-
-$: Asserts the end of the string.
-
-"i": Specifies a case-insensitive match.
 
 # nodemailer
 
