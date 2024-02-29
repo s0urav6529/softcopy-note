@@ -297,16 +297,6 @@ Use this cdn in every header file of ejs.
 
     Example → <script src="cdn link"></script>
 
-# Mongo server:
-
-Starts cmd:
-
-    sudo systemctl start mongod
-
-Status check cmd:
-
-    systemctl status mongod
-
 # express-async-handler
 
 It's designed to simplify error handling when dealing with asynchronous routes and middleware functions. It helps to mitigate this by catching any asynchronous errors that might occur within route handlers and forwarding them to the Express error-handling middleware.
