@@ -245,6 +245,10 @@ step 3 :
 
 ![Screenshot from 2024-03-30 15-19-45](https://github.com/s0urav6529/softcopy-note/assets/96060029/e9dae6db-fb48-47d4-a67a-2eb18d2b2c3d)
 
+If not login in hub.docker in locally, then need to login & run this command again
+
+![Screenshot from 2024-03-30 15-23-01](https://github.com/s0urav6529/softcopy-note/assets/96060029/0427ca5c-94ff-4b7c-a407-905264420e0d)
+
 ### Run image directly using cmd
 
     docker run dockertest
