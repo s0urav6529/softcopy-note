@@ -209,11 +209,11 @@ you can marge the step 4 & 5 like step 5
 
 ![Screenshot from 2024-03-30 14-58-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/63d79be8-05c2-476a-a13c-3728be6045cd)
 
-### step : 6 Go to the root of container
+### step : 6 Go to the root of container & do other staffs
 
     docker exec -it <container_id> bash
 
-![Screenshot from 2024-03-30 14-54-08](https://github.com/s0urav6529/softcopy-note/assets/96060029/4ef5bdf4-c336-48f0-9350-8cb2acb0d1e8)
+![Screenshot from 2024-03-30 15-01-07](https://github.com/s0urav6529/softcopy-note/assets/96060029/274d69eb-e9d6-4393-8aab-5daad8e88b8a)
 
 ### Run image directly using cmd
 
