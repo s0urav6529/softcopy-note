@@ -185,6 +185,8 @@ Example :
 
 Here "." means current folder
 
+![Screenshot from 2024-03-30 14-56-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/915d7254-2e37-43fc-ba3c-8f2d563e7389)
+
 ### step : 4 Crate a container using above image name
 
 Syntax :
