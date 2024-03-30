@@ -207,6 +207,8 @@ If want to run this container in your local server. Need to mapping the port
 
 you can marge the step 4 & 5 like step 5
 
+![Screenshot from 2024-03-30 14-58-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/63d79be8-05c2-476a-a13c-3728be6045cd)
+
 ### step : 6 Go to the root of container
 
     docker exec -it <container_id> bash
