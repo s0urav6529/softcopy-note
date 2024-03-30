@@ -222,20 +222,28 @@ you can marge the step 4 & 5 like step 5
 
 ![Screenshot from 2024-03-30 15-01-07](https://github.com/s0urav6529/softcopy-note/assets/96060029/274d69eb-e9d6-4393-8aab-5daad8e88b8a)
 
-### Push in hub.docker
-
-If want to push my code in docker hub. Then need to create a repository in the hub.docker & copy the "image_name" from the repositoty.
-Copy the "image_name" and create a build locally.
-
-![Screenshot from 2024-03-30 15-17-06](https://github.com/s0urav6529/softcopy-note/assets/96060029/b232dd48-c1ba-4d7a-ab3b-2b34872b3221)
-
-![Screenshot from 2024-03-30 15-17-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/5569a128-a26d-409c-ae2c-4f04f739a22b)
-
 ### Pass the environment variable
 
 Suppose in my code my port is 8000, but further i want that my port must be 4000, due to some reason. So, i can pass the environment variable.
 
 ![Screenshot from 2024-03-30 15-03-43](https://github.com/s0urav6529/softcopy-note/assets/96060029/a42f358d-30ef-49d0-9493-232ecf2fcb44)
+
+### Push in hub.docker
+
+If want to push my code in docker hub. Then need to create a repository in the hub.docker & copy the "image_name" from the repositoty.
+Copy the "image_name" and create a build locally.
+
+step : 1
+
+![Screenshot from 2024-03-30 15-17-06](https://github.com/s0urav6529/softcopy-note/assets/96060029/b232dd48-c1ba-4d7a-ab3b-2b34872b3221)
+
+step 2 :
+
+![Screenshot from 2024-03-30 15-17-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/5569a128-a26d-409c-ae2c-4f04f739a22b)
+
+step 3 :
+
+![Screenshot from 2024-03-30 15-19-45](https://github.com/s0urav6529/softcopy-note/assets/96060029/e9dae6db-fb48-47d4-a67a-2eb18d2b2c3d)
 
 ### Run image directly using cmd
 
