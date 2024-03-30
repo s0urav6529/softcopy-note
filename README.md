@@ -148,7 +148,14 @@ For command below 🔗
 
 ### 🐳 Docker course 🔗
 
+Source 1 :
+
     https://www.youtube.com/playlist?list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn
+
+Source 2 :
+
+    https://www.youtube.com/watch?v=31k6AtW-b3Y
+    https://www.youtube.com/watch?v=xPT8mXa-sJg
 
 ### step : 1 Component of Dockerfile
 
@@ -214,6 +221,15 @@ you can marge the step 4 & 5 like step 5
     docker exec -it <container_id> bash
 
 ![Screenshot from 2024-03-30 15-01-07](https://github.com/s0urav6529/softcopy-note/assets/96060029/274d69eb-e9d6-4393-8aab-5daad8e88b8a)
+
+### Push in hub.docker
+
+If want to push my code in docker hub. Then need to create a repository in the hub.docker & copy the "image_name" from the repositoty.
+Copy the "image_name" and create a build locally.
+
+![Screenshot from 2024-03-30 15-17-06](https://github.com/s0urav6529/softcopy-note/assets/96060029/b232dd48-c1ba-4d7a-ab3b-2b34872b3221)
+
+![Screenshot from 2024-03-30 15-17-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/5569a128-a26d-409c-ae2c-4f04f739a22b)
 
 ### Pass the environment variable
 
