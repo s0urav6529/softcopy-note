@@ -215,6 +215,12 @@ you can marge the step 4 & 5 like step 5
 
 ![Screenshot from 2024-03-30 15-01-07](https://github.com/s0urav6529/softcopy-note/assets/96060029/274d69eb-e9d6-4393-8aab-5daad8e88b8a)
 
+### Pass the environment variable
+
+Suppose in my code my port is 8000, but further i want that my port must be 4000, due to some reason. So, i can pass the environment variable.
+
+![Screenshot from 2024-03-30 15-03-43](https://github.com/s0urav6529/softcopy-note/assets/96060029/a42f358d-30ef-49d0-9493-232ecf2fcb44)
+
 ### Run image directly using cmd
 
     docker run dockertest
