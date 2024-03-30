@@ -150,7 +150,7 @@ For command below 🔗
 
     https://www.youtube.com/playlist?list=PL8p2I9GklV47v6WZTjHAqdsHxpTIpjRwn
 
-### Component of Dockerfile
+### step : 1 Component of Dockerfile
 
 file name - dockerfile
 
@@ -162,7 +162,7 @@ file name - dockerfile
     EXPOSE 8000                     // running port of app
     CMD [ "nodemon", "index.js" ]   // running command
 
-### Docker ignore file
+### step : 2 Docker ignore file
 
 file name - .dockerignore
 
@@ -171,17 +171,45 @@ file name - .dockerignore
 
 If we want to ignore all files that has '.txt' extention then simply use above method, this will work for all extention
 
-### Create image for an app in docker
+### step : 3 Create an image for an app in docker
 
-Suppose my app name is dockertest & i used image name also as dockertest.
+After complete the above steps.Suppose my app name is dockertest & i used "image_name" also as dockertest.You can choose your "image_name".
 
 Syntax :
 
-    docker build -t <image name> <image folder>
+    docker build -t <image_name> <image folder>
 
 Example :
 
     docker build -t dockertest-image .
+
+Here "." means current folder
+
+### step : 4 Crate a container using above image name
+
+Syntax :
+
+    docker run -it <image_name>
+
+Example :
+
+    docker run -it dockertest-image
+
+if "image_name" not found in the docker then it will pull the image from the "hub.docker.com" if "image name" existed in "hub.docker"
+
+### step : 5 Port mapping
+
+If want to run this container in your local server. Need to mapping the port
+
+    docker run -it -p 8001:8001 dockertest-image
+
+you can marge the step 4 & 5 like step 5
+
+### step : 6 Go to the root of container
+
+    docker exec -it <container_id> bash
+
+![Screenshot from 2024-03-30 14-54-08](https://github.com/s0urav6529/softcopy-note/assets/96060029/4ef5bdf4-c336-48f0-9350-8cb2acb0d1e8)
 
 ### Run image directly using cmd
 
