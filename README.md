@@ -146,6 +146,14 @@ For command below 🔗
 
     https://docs.docker.com/desktop/install/ubuntu/
 
+Follow those cmd
+
+    sudo apt-get update
+    cd Downloads  // go to the docker desktop download folder
+    ls
+    sudo apt-get install ./<name_of_the_package>   //<name_of_the_package> = docker-desktop-4.28.0-amd64.deb
+    systemctl --user start docker-desktop
+
 ### 🐳 Docker course 🔗
 
 Source 1 :
