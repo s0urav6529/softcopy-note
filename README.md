@@ -118,6 +118,20 @@ If you want to remove Git version control from a project, you essentially need t
 
     rm -rf .git
 
+### Remove an existed git repositoy & add a new repository to the project
+
+    git remote remove origin
+
+    git remote add origin <origin_name>  or
+    git remote set-url origin <origin_name>
+
+check the origin
+
+    git remote -v
+    git branch
+    git push -u origin <branch_name>  or
+    git push -f origin <brach_name>
+
 ### To clear the cache and update the ignored files :
 
 syntex :
