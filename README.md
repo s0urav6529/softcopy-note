@@ -4,6 +4,14 @@
 
     sudo chmod 755 <file_name>
 
+### Folder Permission in htdocs file
+
+    cd opt/lampp/htdocs
+    sudo mkdir <folder_name>
+    sudo chown -R $USER:$USER <folder_name>
+    cd <folder_name>
+    code .
+
 # Git Setting
 
 ### Check git installed or not
