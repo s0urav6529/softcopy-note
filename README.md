@@ -1,6 +1,6 @@
 # 📚 Documentation
 
-# Give R/W & exc permission to any file
+### Give R/W & exc permission to any file
 
     sudo chmod 755 <file_name>
 
