@@ -1,5 +1,9 @@
 # 📚 Documentation
 
+# Give R/W & exc permission to any file
+
+    sudo chmod 755 <file_name>
+
 # Git Setting
 
 ### Check git installed or not
