@@ -79,12 +79,17 @@ For cloning a git repositoty need to copy the ssh/https 🔗 for the repositoty.
 
 After copy that 🔗, go to the os terminal create a directory or directly clone the 🔗.
 
-    :git clone <git@github.com:xcompany/x.git>
+    :git clone <git@github.com:xcompany/repo_name.git>
 
 Then go to the directory
 
     : cd x-Managment
     : code .
+
+### clone a branch of a repository
+
+    : git clone -b <branch_name> git@gitlab.com:sourav.majumder/repo_name.git
+    : git clone -b <branch_name> git@github.com:sourav.majumder/repo_name.git
 
 # Git Command
 
