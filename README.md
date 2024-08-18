@@ -26,7 +26,7 @@ Then, execute those 5 commands
     php -r "unlink('composer-setup.php');"
     sudo mv composer.phar /usr/local/bin/composer
 
-Now, check installed successfully or not by below commad
+Now, check installed successfully or not by below commnad
 
     composer
 
