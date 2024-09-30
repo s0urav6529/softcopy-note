@@ -843,3 +843,48 @@ If want to make redis-cli, go to main terminal
     sudo snap alias redis.cli redis-cli
 
     sudo snap unalias redis-cli   // for change
+
+### Install Mysql in Linux server
+
+    sudo apt update
+
+    sudo apt install mysql-server
+
+    sudo systemctl start mysql
+
+    sudo systemctl status mysql
+
+##### create a user for mysql
+
+    CREATE USER 'new_username'@'localhost' IDENTIFIED BY 'new_password';
+
+    GRANT ALL PRIVILEGES ON *.* TO 'new_username'@'localhost';
+
+    FLUSH PRIVILEGES;
+
+    EXIT;
+
+
+### Install phpmyadmin in Linux Server:
+
+    sudo apt update
+
+    sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+
+    sudo phpenmod mbstring
+
+    sudo systemctl restart apache2
+
+##### For config phpadmin in with server
+
+    sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-enabled/phpmyadmin.conf
+
+    sudo systemctl restart apache2
+
+Access the phpmyadmin using...
+
+    http://your_server_ip/phpmyadmin
+
+
+
+
