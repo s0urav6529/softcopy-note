@@ -66,6 +66,9 @@ Now, check installed successfully or not by below commnad
 
     https://www.youtube.com/watch?v=jfi9n4y-WFo&t=205s
 
+or
+    https://codewithsusan.com/notes/ssh-keys-and-github
+
 ### SSH 🔑 set or not set checked-out
 
     ls -al  ~/.ssh
