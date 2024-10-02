@@ -66,9 +66,6 @@ Now, check installed successfully or not by below commnad
 
     https://www.youtube.com/watch?v=jfi9n4y-WFo&t=205s
 
-For a server
-
-    https://codewithsusan.com/notes/ssh-keys-and-github
 
 ### SSH 🔑 set or not set checked-out
 
@@ -896,3 +893,6 @@ Access the phpmyadmin using...
 
     https://codewithsusan.com/notes/deploy-laravel-on-apache
 
+### Add ssh key for a server
+
+    https://codewithsusan.com/notes/ssh-keys-and-github
