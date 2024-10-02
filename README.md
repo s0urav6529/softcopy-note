@@ -888,5 +888,7 @@ Access the phpmyadmin using...
     http://your_server_ip/phpmyadmin
 
 
+### How to upload a php project in apache server
 
+    https://codewithsusan.com/notes/deploy-laravel-on-apache
 
