@@ -90,7 +90,6 @@ Then go to the directory
 ### clone a branch of a repository
 
     : git clone -b <branch_name> git@gitlab.com:sourav.majumder/repo_name.git
-    : git clone -b <branch_name> git@github.com:sourav.majumder/repo_name.git
 
 # Git Command
 
