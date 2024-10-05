@@ -848,6 +848,34 @@ If want to make redis-cli, go to main terminal
 
 ## Linux server Configuration:
 
+### Installing PHP 8.2/8.3+ on ubuntu 23.04+ server
+
+    sudo add-apt-repository --remove ppa:ondrej/php
+
+then,
+
+    sudo apt update
+
+You will need to edit your repository source file as follows:
+
+    sudo nano /etc/apt/sources.list
+
+and enter
+
+    deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy main
+
+then run
+
+    sudo apt update
+    
+after which you should now be able to install your php version using 8.2 as an example
+
+    sudo apt install php8.3
+
+For more details check-out below link
+
+    https://dev.to/niyiojeyinka/installing-php-8283-on-ubuntu-2304-4op3
+
 ### Install Mysql:
 
     sudo apt update
@@ -896,3 +924,4 @@ Access the phpmyadmin using...
 ### Add ssh key for a server
 
     https://codewithsusan.com/notes/ssh-keys-and-github
+
