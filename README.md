@@ -916,6 +916,10 @@ Access the phpmyadmin using...
 
     http://your_server_ip/phpmyadmin
 
+##### Remove a directory from server
+
+    sudo rm -r folder_name
+
 
 ### How to upload a php project in apache server
 
@@ -924,4 +928,5 @@ Access the phpmyadmin using...
 ### Add ssh key for a server
 
     https://codewithsusan.com/notes/ssh-keys-and-github
+
 
