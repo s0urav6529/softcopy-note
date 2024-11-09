@@ -936,7 +936,3 @@ then edit here & save the file
 ### Add ssh key for a server
 
     https://codewithsusan.com/notes/ssh-keys-and-github
-
-### Solve the problem during php install form lower to upper version
-
-    https://dev.to/niyiojeyinka/installing-php-8283-on-ubuntu-2304-4op3
