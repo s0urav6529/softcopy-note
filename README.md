@@ -919,6 +919,15 @@ Access the phpmyadmin using...
 
     sudo rm -r folder_name
 
+or
+
+    sudo rm folder_name
+
+##### Create a configure site file
+
+    sudo nano /etc/apache2/sites-available/project.conf
+
+then edit here & save the file
 
 ### How to upload a php project in apache server
 
@@ -928,4 +937,6 @@ Access the phpmyadmin using...
 
     https://codewithsusan.com/notes/ssh-keys-and-github
 
+### Solve the problem during php install form lower to upper version
 
+    https://dev.to/niyiojeyinka/installing-php-8283-on-ubuntu-2304-4op3
