@@ -51,21 +51,15 @@ Now, check installed successfully or not by below commnad
 
 ### Create ssh key for GitHub & system connection or check the 🔗
 
-    Open GitHub setting
-    SSH and GPS keys option
-    generating SSH keys (click the 🔗 )
-    Generation a new SSH key and adding it to the ss-agent(copy the command associated with email)
-    open main terminal →paste copied command along with your email [Example : ssh-keygen -t ed25519 -C "sourav@gmail.com"]
-    identify directory to save the key file
-    enter passphrase(password)
-    go to saved file directory
-    open .ssh folder -> open .pub file -> copy the text
-    paste the key to ssh key of GitHub → enter GitHub password → done.
+    ssh-keygen -t rsa -b 4096 -C "abc@gmail.com"
 
-### Add SSH key 🔗
+Then go to the file location & copy the key form the .pub file. After copy it paste it in ssh key of the github or gitlab setting. Then run the cmd for ensuring key connected successfully.
+
+    ssh -T git@github.com
+
+### For more details watch this 🔗
 
     https://www.youtube.com/watch?v=jfi9n4y-WFo&t=205s
-
 
 ### SSH 🔑 set or not set checked-out
 
@@ -844,7 +838,6 @@ If want to make redis-cli, go to main terminal
 
     sudo snap unalias redis-cli   // for change
 
-
 ## Linux server Configuration:
 
 ### Installing PHP 8.2/8.3+ on ubuntu 23.04+ server
@@ -866,7 +859,7 @@ and enter
 then run
 
     sudo apt update
-    
+
 after which you should now be able to install your php version using 8.2 as an example
 
     sudo apt install php8.3
