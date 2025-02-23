@@ -212,7 +212,7 @@ Source 2 :
     https://www.youtube.com/watch?v=31k6AtW-b3Y
     https://www.youtube.com/watch?v=xPT8mXa-sJg
 
-### step : 1 Component of Dockerfile
+### step-1: Component of Dockerfile
 
 file name - dockerfile
 
@@ -224,7 +224,7 @@ file name - dockerfile
     EXPOSE 8000                     // running port of app
     CMD [ "nodemon", "index.js" ]   // running command
 
-### step : 2 Docker ignore file
+### step-2: Docker ignore file
 
 file name - .dockerignore
 
@@ -233,7 +233,11 @@ file name - .dockerignore
 
 If we want to ignore all files that has '.txt' extention then simply use above method, this will work for all extention
 
-### step : 3 Create an image for an app in docker
+### step-3: Login into docker
+
+    docker login -u <user_name>
+
+### step-4: Create an image for an app in docker
 
 After complete the above steps.Suppose my app name is dockertest & i used "image_name" also as dockertest.You can choose your "image_name".
 
@@ -249,7 +253,7 @@ Here "." means current folder
 
 ![Image](https://github.com/user-attachments/assets/338b1d2a-cacb-488d-b3a1-d8e5d51e683f)
 
-### step : 4 Create a container using above image name
+### step-5: Create a container using above image name
 
 Syntax :
 
@@ -261,7 +265,7 @@ Example :
 
 if "image_name" not found in the docker then it will pull the image from the "hub.docker.com" if "image name" existed in "hub.docker"
 
-### step : 5 Port mapping
+### step-6: Port mapping
 
 If want to run this container in your local server. Need to mapping the port
 
@@ -271,7 +275,7 @@ you can marge the step 4 & 5 like step 5
 
 ![Screenshot from 2024-03-30 14-58-48](https://github.com/s0urav6529/softcopy-note/assets/96060029/63d79be8-05c2-476a-a13c-3728be6045cd)
 
-### step : 6 Go to the root of container & do other staffs
+### step-7: Go to the root of container & do other staffs
 
     docker exec -it <container_id> bash
 
