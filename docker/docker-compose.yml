@@ -1,0 +1,72 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: idol_mart_app
+    ports:
+      - "4000:4000"
+    environment:
+      NODE_ENV: development
+      MONNGODB_HOST: mongodb
+  
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - data-volumes:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: admin11
+      MONGO_INITDB_PASSWORD: admin11
+    
+  
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin11
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin11
+      ME_CONFIG_MONGODB_SERVER: mongodb
+  
+volumes:
+  data-volumes:
+
+
+# version: '3.8'
+# services:
+#   app:
+#     build: .
+#     container_name: idol_mart_app
+#     ports:
+#       - "4000:4000"
+#     depends_on:
+#       - mongodb
+#     environment:
+#       - MONGO_URI=mongodb://:27017/idolMart
+#     env_file:
+#       - .env
+#     networks:
+#       - node-network
+    
+#   mongodb:
+#     image: mongo:6-jammy
+#     container_name: idol_mart_db
+#     restart: always
+#     ports:
+#       - "27017:27017"
+#     environment:
+#       MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+#     volumes:
+#       - mongodb_data:/data/db
+#     networks:
+#       - node-network
+    
+# volumes:
+#   mongodb_data:
+
+# networks:
+#   node-network:
+#     driver: bridge
