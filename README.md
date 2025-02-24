@@ -46,14 +46,6 @@ create [.vscode] folder→create [settings.json]file and paste below code
         }
     }
 
-# ALL types of CDN 🔗
-
-    https://cdnjs.com/libraries
-
-Use this cdn in every header file of ejs.
-
-    Example → <script src="cdn link"></script>
-
 # express-async-handler
 
 It's designed to simplify error handling when dealing with asynchronous routes and middleware functions. It helps to mitigate this by catching any asynchronous errors that might occur within route handlers and forwarding them to the Express error-handling middleware.
@@ -382,40 +374,6 @@ or an array of allowed origins, can also use a function to dynamically determine
         console.log(`Server is running on port ${port}`);
     });
 
-# 🐍 installation command for ubunto
-
-    sudo apt update
-    sudo apt install software-properties-common
-    sudo add-apt-repository ppa:deadsnakes/ppa
-    sudo apt update
-    sudo apt install python3.12
-    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.12 2
-    sudo apt install python3.12-dev python3.12-venv python3.12-distutils python3.12-gdbm python3.12-tk python3.12-lib2to3
-
-Now to see the version
-
-    python --version
-
-### face_recognition pakage
-
-    sudo apt-get install build-essential cmake
-    sudo apt-get install libopenblas-dev liblapack-dev
-    sudo apt-get install libx11-dev libgtk-3-dev
-    sudo apt-get install libboost-all-dev
-    pip install face_recognition
-
-### cv2 pakage
-
-    pip install opencv-python
-
-### .env file
-
-![Screenshot from 2024-02-22 11-03-14](https://github.com/s0urav6529/softcopy-note/assets/96060029/21b8392e-5073-4790-9969-2936040ec633)
-
-    pip install python-dotenv python-decouple
-
-![Screenshot from 2024-02-22 11-03-30](https://github.com/s0urav6529/softcopy-note/assets/96060029/2f626fb8-2deb-484b-b20b-f339b9415a2e)
-
 # installation of XAMPP
 
     https://www.apachefriends.org/
@@ -443,42 +401,6 @@ After successful installation, go main terminal
     curl -sL https://firebase.tools | bash
     firebase login
     firebase projects:list
-
-# redis installation step by step
-
-For install using snap...
-
-    sudo snap install redis
-
-For enable redis...
-
-    sudo snap enable redis
-
-For start redis...
-
-    sudo snap start redis
-
-For stop redis...
-
-    sudo snap stop redis
-
-For restart redis...
-
-    sudo snap restart redis
-
-For check the redis status...
-
-    sudo snap services
-
-For connect the redis server using snap
-
-    redis.cli
-
-If want to make redis-cli, go to main terminal
-
-    sudo snap alias redis.cli redis-cli
-
-    sudo snap unalias redis-cli   // for change
 
 ## Linux server Configuration:
 
