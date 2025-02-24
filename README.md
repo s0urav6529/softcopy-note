@@ -75,11 +75,11 @@ Then go to the directory
 
     git checkout -b <branch_name>
 
-    git checkout <branch-name>
 
 ### Switch to a existed branch after commit in current branch
 
     git switch <branch_name>
+    git checkout <branch-name>
 
 ### To check the current branch you are on in a Git repository using the command line.
 
@@ -97,9 +97,6 @@ It means that you are currently on the "feature-branch" because it has the aster
 
     git rev-parse --abbrev-ref HEAD
 
-### To switch to a different branch in a Git repository using the command line.
-
-    git checkout <branch-name>
 
 ### Fetches changes from a remote repository and merges them into the current branch.
 
