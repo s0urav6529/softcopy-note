@@ -75,7 +75,9 @@ Then go to the directory
 
     git checkout -b <branch_name>
 
-### Switch to a existed branch
+    git checkout <branch-name>
+
+### Switch to a existed branch after commit in current branch
 
     git switch <branch_name>
 
